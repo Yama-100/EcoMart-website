@@ -99,6 +99,7 @@ footer {
 /* Common Layout */
 .container {
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
     padding: 2rem;
 }
@@ -514,10 +515,12 @@ footer {
 }
 
 /* --- Products Page Specifics --- */
+/* --- Products Page Specifics --- */
 .products-body {
     /* Background Image with Dark Overlay */
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../Assets/product bg.PNG');
-    background-size: cover;
+    background-size: 100% 100%;
+    /* stretched to fit as per request */
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
