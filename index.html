@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoMart - Sustainable Living</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- 
+        INTERNAL CSS 
+        Justification: Used here for page-specific styling that is unique to the Home page Hero section.
+    -->
+    <style>
+        .intro_message {
+            background-color: #e8f5e9;
+            /* Light green background for hero */
+            text-align: center;
+            padding: 4rem 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .intro_message h1 {
+            font-size: 4rem;
+            color: #1b5e20;
+            margin-bottom: 1rem;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">EcoMart</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <section class="intro_message">
+            <h1>Welcome to EcoMart</h1>
+            <p>Your one-stop shop for sustainable lifestyle products.</p>
+            <br>
+            <!-- 
+                INLINE CSS 
+                Justification: Using inline CSS to apply specific override for this button's margin and shadow emphasis. 
+            -->
+            <a href="products.html" class="btn" style="margin-top: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.2);">Shop
+                Now</a>
+        </section>
+
+        <section class="container">
+            <h2 style="text-align: center; margin-bottom: 2rem; color: #2E7D32;">Why Choose Us?</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <h3>Sustainable Materials</h3>
+                    <p>All our products are made from 100% eco-friendly materials like bamboo, organic cotton, and
+                        recycled metals.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Ethical Sourcing</h3>
+                    <p>We work directly with artisans and verify fair trade practices for every item we sell.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Carbon Neutral</h3>
+                    <p>Every purchase helps plant a tree. We are committed to a net-zero carbon footprint.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 EcoMart. All rights reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

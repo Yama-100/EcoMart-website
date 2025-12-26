@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoMart - Research & Comparison</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- INTERNAL CSS: Table styling -->
+    <style>
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 1rem;
+            text-align: left;
+        }
+
+        .comparison-table th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .references ul {
+            list-style-type: decimal;
+            margin-left: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">EcoMart</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1>Website Research & Comparison</h1>
+        <p>This section contrasts the components used in EcoMart against standard e-commerce practices and a reference
+            website (e.g., "GenericShop").</p>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Component / Feature</th>
+                    <th>EcoMart (Our Website)</th>
+                    <th>GenericShop (Investigated Website)</th>
+                    <th>Contrast / Reason</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Navigation Bar</td>
+                    <td>Sticky, highlighting active page with JS.</td>
+                    <td>Static, no active state indication.</td>
+                    <td>Improves user orientation and navigation flow.</td>
+                </tr>
+                <tr>
+                    <td>Product Display</td>
+                    <td>Dynamic rendering via JavaScript array.</td>
+                    <td>Hardcoded HTML items.</td>
+                    <td>Allows easier scalability and data management.</td>
+                </tr>
+                <tr>
+                    <td>Forms</td>
+                    <td>Client-side validation with custom alerts.</td>
+                    <td>Basic HTML5 validation only.</td>
+                    <td>Enhances user experience by providing immediate, specific feedback.</td>
+                </tr>
+                <tr>
+                    <td>Responsiveness</td>
+                    <td>CSS Grid and Flexbox for mobile-first design.</td>
+                    <td>Fixed width containers.</td>
+                    <td>Ensures accessibility across all device sizes.</td>
+                </tr>
+                <tr>
+                    <td>Aesthetics</td>
+                    <td>Nature-themed color palette (Greens/Earth tones).</td>
+                    <td>Generic Blue/White corporate theme.</td>
+                    <td>Aligns visual identity with the sustainable mission.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <section class="references">
+            <!-- INLINE CSS: Header style -->
+            <h2 style="border-bottom: 2px solid var(--accent-color); display: inline-block; margin-bottom: 1rem;">
+                References</h2>
+            <p>The following websites were investigated for design patterns and components:</p>
+            <ul>
+                <li><a href="https://www.w3schools.com" target="_blank">W3Schools (HTML/CSS Standards)</a></li>
+                <li><a href="https://developer.mozilla.org" target="_blank">MDN Web Docs (JavaScript Best Practices)</a>
+                </li>
+                <li><a href="https://www.awwwards.com" target="_blank">Awwwards (Design Inspiration)</a></li>
+                <li><a href="https://css-tricks.com" target="_blank">CSS-Tricks (Layout Techniques)</a></li>
+                <li><a href="https://getbootstrap.com" target="_blank">Bootstrap (Component Structures)</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 EcoMart. All rights reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
