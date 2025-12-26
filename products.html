@@ -16,7 +16,7 @@
 
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
@@ -67,7 +67,7 @@
     </style>
 </head>
 
-<body>
+<body class="products-body">
 
     <nav>
         <div class="nav-container">
@@ -85,15 +85,25 @@
 
     <main class="container products-section">
         <!-- INLINE CSS: Header alignment -->
-        <h1 style="text-align: center; margin-bottom: 1rem;">Our Sustainable Collection</h1>
-        <p style="text-align: center; color: #555;">Browse our hand-picked selection of eco-friendly goods.</p>
+        <h1 style="text-align: center; margin-bottom: 1rem; color: #fff; text-shadow: 1px 1px 3px rgba(0,0,0,0.8);">Our
+            Sustainable Collection</h1>
+        <p style="text-align: center; color: #f0f0f0; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Browse our hand-picked
+            selection of eco-friendly goods.</p>
 
         <!-- The Grid where JS will inject products -->
         <div id="product-grid" class="product-grid">
             <!-- Products will be loaded here by main.js -->
-            <p>Loading products...</p>
+            <p style="color: white;">Loading products...</p>
         </div>
     </main>
+
+    <!-- Floating Cart Button -->
+    <div class="fab-container">
+        <button class="cart-fab" id="cartBtn">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count" id="cartCount">0</span>
+        </button>
+    </div>
 
     <footer>
         <div class="footer-content">

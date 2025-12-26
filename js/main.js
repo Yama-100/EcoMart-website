@@ -218,6 +218,30 @@ const products = [
     }
 ];
 
+// --- Cart Logic ---
+let cartCount = 0;
+
+function updateCartCount() {
+    const countElement = document.getElementById('cartCount');
+    if (countElement) {
+        countElement.textContent = cartCount;
+
+        // Optional: Animate badge
+        countElement.style.transform = "scale(1.2)";
+        setTimeout(() => {
+            countElement.style.transform = "scale(1)";
+        }, 200);
+    }
+}
+
+function addToCart() {
+    cartCount++;
+    updateCartCount();
+    // No alert per user request details (implied by just "increases by one"), but keeping user feedback is good.
+    // I'll make the button text change temporarily or just rely on the counter.
+}
+// ------------------
+
 /**
  * Function to render products dynamically into the DOM.
  * @param {HTMLElement} container - The container element to append products to.
@@ -231,6 +255,7 @@ function renderProducts(container) {
         card.className = 'product-card';
 
         // Inner HTML template for the product
+        // Updated onclick to call addToCart()
         card.innerHTML = `
             <div class="product-info">
                 <h3>${product.name}</h3>
@@ -239,7 +264,7 @@ function renderProducts(container) {
                     <span class="original-price">$${product.price.toFixed(2)}</span>
                     <span class="discount-price">$${product.discountPrice.toFixed(2)}</span>
                 </div>
-                <button class="btn add-to-cart" onclick="alert('Added to cart!')">Add to Cart</button>
+                <button class="btn add-to-cart" onclick="addToCart()">Add to Cart</button>
             </div>
         `;
 
