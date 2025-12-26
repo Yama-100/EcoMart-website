@@ -34,9 +34,22 @@ body {
 
 /* Navigation */
 nav {
-    background-color: var(--primary-color);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: transparent;
+    /* Start transparent */
     color: var(--text-light);
     padding: 1rem 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
+nav.nav-scrolled {
+    background-color: var(--primary-color);
+    padding: 0.5rem 0;
+    /* Shrink slightly on scroll */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .nav-container {
@@ -105,4 +118,219 @@ footer {
 
 .btn:hover {
     background-color: #1b5e20;
+}
+
+/* Hero Section */
+.intro_message {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Assets/index bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* Parallax effect */
+    text-align: center;
+    padding: 12rem 1rem;
+    margin-bottom: 2rem;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro_message h1 {
+    font-size: 4.5rem;
+    color: #ffffff;
+    /* Overriding previous green for contrast */
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.intro_message p {
+    font-size: 1.5rem;
+}
+
+/* Features Section */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.feature-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+.feature-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* Updated Footer */
+footer {
+    background-color: #1a1a1a;
+    color: #f4f4f4;
+    padding: 1.5rem 0 0.5rem;
+    /* Reduced height (was 3rem) */
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+}
+
+.footer-section h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.3rem;
+    display: inline-block;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+    color: #cccccc;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 0.9rem;
+}
+
+.footer-section ul li a:hover {
+    color: var(--accent-color);
+    padding-left: 5px;
+}
+
+
+
+/* Newsletter Styles */
+.newsletter-form {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.newsletter-form input {
+    padding: 0.75rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-right: none;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+    flex: 1;
+    min-width: 0;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: white;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    margin-top: 0px;
+}
+
+.newsletter-form input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.newsletter-form input:focus {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: #1b5e20;
+}
+
+.newsletter-form button {
+    padding: 0.75rem 0.55rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: 0 4px 4px 0;
+    transition: all 0.3s ease;
+    border: none;
+    background: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.newsletter-form button:hover {
+    background: #1b5e20;
+}
+
+.newsletter-form button:active {
+    transform: translateY(0);
+}
+
+
+
+
+
+
+/* Social Icons - Left aligned in contact section */
+.socials {
+    text-align: left;
+    margin-top: 1rem;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.socials a {
+    display: inline-block;
+    color: #f4f4f4;
+    font-size: 1.2rem;
+    margin-right: 1rem;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.socials a:hover {
+    transform: translateY(-3px);
+}
+
+/* Brand Colors */
+.socials a.facebook:hover {
+    color: #3b5998;
+}
+
+.socials a.reddit:hover {
+    color: #ff4500;
+}
+
+.socials a.instagram:hover {
+    color: #E1306C;
+}
+
+.socials a.linkedin:hover {
+    color: #0077b5;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 1rem;
+    border-top: 1px solid #333;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    color: #888;
 }

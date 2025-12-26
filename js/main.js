@@ -31,6 +31,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// Navigation Scroll Effect
+window.addEventListener('scroll', function () {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 50) {
+        nav.classList.add('nav-scrolled');
+    } else {
+        nav.classList.remove('nav-scrolled');
+    }
+});
+
 /**
  * Validates the contact form on submission.
  * @param {Event} e - The submit event.
@@ -156,4 +166,3 @@ function renderProducts(container) {
         container.appendChild(card);
     });
 }
-

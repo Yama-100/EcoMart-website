@@ -88,15 +88,23 @@
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
-            <div class="footer-section contact">
+            <div class="footer-section newsletter">
+                <h3>Newsletter</h3>
+                <p>Subscribe to get the latest updates and offers.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed!');">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn">Subscribe</button>
+                </form>
+            </div>
+            <div class="footer-section Contact">
                 <h3>Contact Us</h3>
                 <p>Email: support@ecomart.com</p>
                 <p>Phone: +1 234 567 890</p>
                 <div class="socials">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-icon facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-icon reddit"><i class="fab fa-reddit"></i></a>
+                    <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon linkedin"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
         </div>
