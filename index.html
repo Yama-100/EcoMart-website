@@ -11,33 +11,13 @@
         INTERNAL CSS 
         Justification: Used here for page-specific styling that is unique to the Home page Hero section.
     -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- 
+        INTERNAL CSS 
+        Justification: Used here for page-specific styling that is unique to the Home page Hero section.
+    -->
     <style>
-        .intro_message {
-            background-color: #e8f5e9;
-            /* Light green background for hero */
-            text-align: center;
-            padding: 4rem 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .intro_message h1 {
-            font-size: 4rem;
-            color: #1b5e20;
-            margin-bottom: 1rem;
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .feature-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
+        /* Styles moved to external sheet, but keeping block structure if needed for specific overrides or preserving comments */
     </style>
 </head>
 
@@ -94,7 +74,35 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 EcoMart. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>EcoMart</h3>
+                <p>Leading the way to a sustainable future with eco-friendly products for every need.</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Shop</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h3>Contact Us</h3>
+                <p>Email: support@ecomart.com</p>
+                <p>Phone: +1 234 567 890</p>
+                <div class="socials">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 EcoMart. All rights reserved.</p>
+        </div>
     </footer>
 
     <script src="js/main.js"></script>
