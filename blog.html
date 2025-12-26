@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EcoMart - Blog</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <!-- INTERNAL CSS: Blog specific styles -->
     <style>
@@ -108,7 +109,43 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 EcoMart. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>EcoMart</h3>
+                <p>Leading the way to a sustainable future with eco-friendly products for every need.</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Shop</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section newsletter">
+                <h3>Newsletter</h3>
+                <p>Subscribe to get the latest updates and offers.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed!');">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn">Subscribe</button>
+                </form>
+            </div>
+            <div class="footer-section Contact">
+                <h3>Contact Us</h3>
+                <p>Email: support@ecomart.com</p>
+                <p>Phone: +1 234 567 890</p>
+                <div class="socials">
+                    <a href="#" class="social-icon facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-icon reddit"><i class="fab fa-reddit"></i></a>
+                    <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon linkedin"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 EcoMart. All rights reserved.</p>
+        </div>
     </footer>
 
     <script src="js/main.js"></script>
