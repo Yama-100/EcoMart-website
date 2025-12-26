@@ -1,2 +1,2 @@
-# EcoMart-wepsite
+# EcoMart-website
 college IS project
