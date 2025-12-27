@@ -10,30 +10,72 @@
 
     <!-- INTERNAL CSS: Blog specific styles -->
     <style>
-        .blog-post {
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .blog-card {
             background: white;
             padding: 2rem;
-            margin-bottom: 2rem;
-            border-radius: 8px;
-            border-left: 5px solid var(--accent-color);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid #eee;
         }
 
-        .blog-post h2 {
-            margin-bottom: 1rem;
-            color: var(--text-dark);
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
 
-        .meta {
-            color: #777;
-            font-size: 0.9rem;
+        .blog-card h2 {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        .blog-meta {
+            color: #888;
+            font-size: 0.85rem;
             margin-bottom: 1rem;
             font-style: italic;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        .content {
-            line-height: 1.8;
-            line-height: 1.8;
-            margin-bottom: 1rem;
+        .blog-summary {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .read-more-btn {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            width: fit-content;
+        }
+
+        .read-more-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
         }
 
         main.container {
@@ -71,58 +113,71 @@
     </nav>
 
     <main class="container">
-        <!-- INLINE CSS: Page title styling -->
-        <h1 style="margin: 2rem 0; text-align: center; border-bottom: 2px solid #ddd; padding-bottom: 10px;">Eco-Living
-            Blog</h1>
+        <h1 style="margin: 2rem 0; text-align: center; color: var(--text-dark);">Latest Articles</h1>
+        <p style="text-align: center; color: #666; margin-bottom: 3rem;">Explore insights on sustainable living,
+            eco-friendly practices, and green technology.</p>
 
-        <article class="blog-post">
-            <h2>Technology's Impact on Daily Life and Sustainable Business</h2>
-            <div class="meta">Posted on December 15, 2024 by Green Tech Team</div>
-            <div class="content">
-                <p>
-                    In recent years, technology has revolutionized how we approach sustainability in both our daily
-                    lives and business operations.
-                    From smart home devices that optimize energy consumption to blockchain supply chains ensuring
-                    ethical sourcing,
-                    tech is the backbone of the modern green movement.
-                </p>
-                <br>
-                <h3>Smart Homes, Greener Lives</h3>
-                <p>
-                    IoT devices allow homeowners to monitor their carbon footprint in real-time. Smart thermostats learn
-                    our schedules,
-                    reducing heating and cooling waste. This seamless integration of technology means that living
-                    sustainably
-                    doesn't require a drastic lifestyle overhaul—just smarter tools.
-                </p>
-                <br>
-                <h3>Business Efficiency</h3>
-                <p>
-                    For businesses like EcoMart, data analytics predicts demand to prevent overproduction—a major source
-                    of waste.
-                    Furthermore, digital platforms allow us to reach a global audience without the overhead of physical
-                    storefronts
-                    in every city, significantly lowering our operational emissions.
-                </p>
-            </div>
-            <a href="#" style="color: var(--primary-color); font-weight: bold;">Read Full Article &rarr;</a>
-        </article>
+        <div class="blog-grid">
+            <!-- Article 1 -->
+            <article class="blog-card">
+                <div>
+                    <h2>Technology's Impact on Sustainability</h2>
+                    <div class="blog-meta">
+                        <i class="far fa-calendar-alt"></i> Released: December 15, 2024
+                    </div>
+                    <p class="blog-summary">
+                        Discover how modern technology, from smart homes to blockchain supply chains, is revolutionizing
+                        the way we approach sustainable living and business operations.
+                    </p>
+                </div>
+                <a href="#" class="read-more-btn">Read More</a>
+            </article>
 
-        <article class="blog-post">
-            <h2>5 Simple Swaps for a Plastic-Free Kitchen</h2>
-            <div class="meta">Posted on December 10, 2024 by Sarah Jones</div>
-            <div class="content">
-                <p>
-                    Transitioning to a plastic-free kitchen is easier than you think. Start with replacing plastic wrap
-                    with beeswax wraps,
-                    swapping sponge scrubbers for wooden brushes, and using glass jars for bulk storage. Small changes
-                    add up to a
-                    massive reduction in household waste over time.
-                </p>
-            </div>
-            <a href="#" style="color: var(--primary-color); font-weight: bold;">Read Full Article &rarr;</a>
-        </article>
+            <!-- Article 2 -->
+            <article class="blog-card">
+                <div>
+                    <h2>5 Simple Swaps for a Plastic-Free Kitchen</h2>
+                    <div class="blog-meta">
+                        <i class="far fa-calendar-alt"></i> Released: December 10, 2024
+                    </div>
+                    <p class="blog-summary">
+                        Transitioning to a zero-waste lifestyle starts in the kitchen. Learn about easy, impactful swaps
+                        like beeswax wraps and glass storage that reduce plastic waste.
+                    </p>
+                </div>
+                <a href="#" class="read-more-btn">Read More</a>
+            </article>
 
+            <!-- Article 3 -->
+            <article class="blog-card">
+                <div>
+                    <h2>The Future of Ethical Fashion</h2>
+                    <div class="blog-meta">
+                        <i class="far fa-calendar-alt"></i> Released: November 28, 2024
+                    </div>
+                    <p class="blog-summary">
+                        Fast fashion is out—ethical fashion is in. Explore the rise of organic materials, fair trade
+                        labor, and how you can build a sustainable wardrobe.
+                    </p>
+                </div>
+                <a href="#" class="read-more-btn">Read More</a>
+            </article>
+
+            <!-- Article 4 -->
+            <article class="blog-card">
+                <div>
+                    <h2>Urban Gardening 101</h2>
+                    <div class="blog-meta">
+                        <i class="far fa-calendar-alt"></i> Released: November 15, 2024
+                    </div>
+                    <p class="blog-summary">
+                        No backyard? No problem. Learn how to grow your own herbs and vegetables in small urban spaces,
+                        bringing nature back into the concrete jungle.
+                    </p>
+                </div>
+                <a href="#" class="read-more-btn">Read More</a>
+            </article>
+        </div>
     </main>
 
     <footer>
