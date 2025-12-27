@@ -189,32 +189,46 @@ function clearError(input, errorMsg) {
  */
 const products = [
     {
-        name: "Bamboo Water Bottle",
-        price: 25.00,
-        discountPrice: 19.99,
-        description: "Stay hydrated with this eco-friendly, durable bamboo water bottle.",
-        image: "assets/images/bottle.jpg" // Placeholder path
+        name: "Hemp Bag",
+        price: 35.00,
+        discountPrice: 29.99,
+        description: "Durable, eco-friendly hemp bag perfect for daily use.",
+        image: "Assets/hemp bag.PNG"
     },
     {
-        name: "Organic Cotton Tote",
-        price: 15.00,
-        discountPrice: 12.50,
-        description: "A sturdy, reusable tote bag made from 100% organic cotton.",
-        image: "assets/images/tote.jpg"
+        name: "Hemp Shoes",
+        price: 55.00,
+        discountPrice: 48.00,
+        description: "Comfortable, breathable, and sustainable footwear.",
+        image: "Assets/hemp shoes.PNG"
     },
     {
-        name: "Reusable Silicone Straws",
-        price: 10.00,
-        discountPrice: 8.00,
-        description: "Set of 4 silicone straws with a cleaning brush. BPA free.",
-        image: "assets/images/straws.jpg"
+        name: "Wooden Toothbrush",
+        price: 6.00,
+        discountPrice: 4.50,
+        description: "Biodegradable bamboo toothbrush with soft bristles.",
+        image: "Assets/toothbrush.PNG"
     },
     {
-        name: "Biodegradable Phone Case",
-        price: 30.00,
-        discountPrice: 24.99,
-        description: "Compostable phone case that protects your phone and the planet.",
-        image: "assets/images/case.jpg"
+        name: "Eco Toilet Paper",
+        price: 18.00,
+        discountPrice: 15.00,
+        description: "100% recycled paper, plastic-free packaging.",
+        image: "Assets/toilet papers.PNG"
+    },
+    {
+        name: "Bamboo Bottles",
+        price: 28.00,
+        discountPrice: 24.00,
+        description: "Insulated bamboo water bottle, stylish and functional.",
+        image: "Assets/bambo bottles.PNG"
+    },
+    {
+        name: "Wooden Compost Bin",
+        price: 65.00,
+        discountPrice: 55.00,
+        description: "Compact wooden bin for odorless home composting.",
+        image: "Assets/compost bins.jpg"
     }
 ];
 
@@ -257,6 +271,7 @@ function renderProducts(container) {
         // Inner HTML template for the product
         // Updated onclick to call addToCart()
         card.innerHTML = `
+            <img src="${product.image}" alt="${product.name}" class="product-image">
             <div class="product-info">
                 <h3>${product.name}</h3>
                 <p class="description">${product.description}</p>
