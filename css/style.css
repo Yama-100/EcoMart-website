@@ -3,28 +3,35 @@
  * Justification: Used for global styles, resets, and reusable components to maintain consistency across the site.
  */
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 :root {
-    --primary-color: #2E7D32;
-    /* Forest Green */
-    --secondary-color: #81C784;
-    /* Light Green */
-    --accent-color: #FFB74D;
-    /* Orange */
-    --text-dark: #333333;
+    --primary-color: #1B5E20;
+    /* Deeper forest green - more premium */
+    --secondary-color: #4CAF50;
+    /* Vibrant green - better saturation */
+    --accent-color: #F57C00;
+    /* Warm amber - harmonious with greens */
+    --text-dark: #263238;
+    /* Blue-grey - softer than pure black */
     --text-light: #f4f4f4;
     --bg-light: #ffffff;
-    --bg-off-white: #f9f9f9;
+    --bg-off-white: #ECEFF1;
+    /* Cool grey - more refined */
     --card-bg: #ffffff;
 }
 
 .dark-theme {
-    --bg-light: #121212;
-    --bg-off-white: #1e1e1e;
-    --text-dark: #e0e0e0;
+    --bg-light: #0D1117;
+    /* Modern dark background */
+    --bg-off-white: #161B22;
+    /* Subtle elevation */
+    --text-dark: #E6EDF3;
+    /* Softer white for reduced eye strain */
     --text-light: #ffffff;
     --primary-color: #66bb6a;
     /* Lighter green for better contrast */
-    --card-bg: #1e1e1e;
+    --card-bg: #161B22;
 }
 
 * {
@@ -34,13 +41,50 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.7;
     color: var(--text-dark);
     background-color: var(--bg-light);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    font-weight: 400;
+}
+
+/* Typography Hierarchy */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--text-dark);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 0.875rem;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+h4 {
+    font-size: 1.25rem;
+    margin-bottom: 0.625rem;
+    font-weight: 500;
 }
 
 /* Navigation */
@@ -117,7 +161,7 @@ footer {
 
 .btn {
     display: inline-block;
-    background-color: var(--primary-color);
+    background-color: var(--accent-color);
     color: var(--text-light);
     padding: 0.7rem 1.5rem;
     border: none;
@@ -129,7 +173,8 @@ footer {
 }
 
 .btn:hover {
-    background-color: #1b5e20;
+    background-color: #E65100;
+    /* Darker amber on hover */
 }
 
 /* Hero Section */
@@ -291,7 +336,7 @@ footer {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: var(--primary-color);
+    background-color: var(--accent-color);
     color: white;
     border: none;
     width: 50px;
@@ -307,7 +352,8 @@ footer {
 }
 
 .carousel-btn:hover {
-    background-color: #1b5e20;
+    background-color: #E65100;
+    /* Darker amber on hover */
     transform: translateY(-50%) scale(1.1);
 }
 
