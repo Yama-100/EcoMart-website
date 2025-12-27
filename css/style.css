@@ -14,6 +14,17 @@
     --text-light: #f4f4f4;
     --bg-light: #ffffff;
     --bg-off-white: #f9f9f9;
+    --card-bg: #ffffff;
+}
+
+.dark-theme {
+    --bg-light: #121212;
+    --bg-off-white: #1e1e1e;
+    --text-dark: #e0e0e0;
+    --text-light: #ffffff;
+    --primary-color: #66bb6a;
+    /* Lighter green for better contrast */
+    --card-bg: #1e1e1e;
 }
 
 * {
@@ -171,6 +182,7 @@ footer {
     height: 400px;
     /* Constrain height for carousel */
     perspective: 1000px;
+    overflow: hidden;
 }
 
 .features-carousel {
@@ -182,26 +194,53 @@ footer {
     height: 100%;
 }
 
-.feature-card {
-    background: white;
+/* Feature & Team Card Styles (Carousel) */
+.featu.research-item {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.feature-card,
+.team-card {
+    background: var(--card-bg);
     padding: 2rem;
     border-radius: 15px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     text-align: center;
     position: absolute;
     /* Using absolute positioning for stacking */
-    width: 300px;
-    height: 250px;
+    width: 270px;
+    /* Reduced width as requested */
+    height: 350px;
     transition: all 0.5s ease;
     opacity: 0;
     z-index: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    /* Top aligned */
+}
+
+.feature-card h3,
+.team-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+
+.team-card .avatar {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-color);
 }
 
 /* Active Card (Center) */
-.feature-card.active {
+.feature-card.active,
+.team-card.active {
     opacity: 1;
     transform: translateX(0) scale(1.2);
     z-index: 3;
@@ -210,14 +249,16 @@ footer {
 }
 
 /* Adjacent Cards (Left/Right) */
-.feature-card.prev {
+.feature-card.prev,
+.team-card.prev {
     opacity: 0.7;
     transform: translateX(-120%) scale(0.9);
     z-index: 2;
     cursor: pointer;
 }
 
-.feature-card.next {
+.feature-card.next,
+.team-card.next {
     opacity: 0.7;
     transform: translateX(120%) scale(0.9);
     z-index: 2;
@@ -225,13 +266,15 @@ footer {
 }
 
 /* Hidden Cards */
-.feature-card.sub-prev {
+.feature-card.sub-prev,
+.team-card.sub-prev {
     opacity: 0;
     transform: translateX(-240%) scale(0.7);
     z-index: 1;
 }
 
-.feature-card.sub-next {
+.feature-card.sub-next,
+.team-card.sub-next {
     opacity: 0;
     transform: translateX(240%) scale(0.7);
     z-index: 1;
@@ -241,6 +284,7 @@ footer {
 .feature-card h3 {
     color: var(--primary-color);
     margin-bottom: 1rem;
+    margin-top: 0;
 }
 
 /* Carousel Buttons */
@@ -468,17 +512,13 @@ footer {
 }
 
 .review-card {
-    background: white;
+    background: transparent;
     padding: 2rem;
     border-radius: 15px;
     text-align: center;
     position: relative;
-    /* Glowing Gradient Border Effect */
-    border: 3px solid transparent;
-    background-clip: padding-box, border-box;
-    background-origin: padding-box, border-box;
-    background-image: linear-gradient(#fff, #fff), linear-gradient(135deg, #2E7D32, #81C784, #b2ff59);
-    box-shadow: 0 0 15px rgba(46, 125, 50, 0.2);
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 0 15px var(--primary-color);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 

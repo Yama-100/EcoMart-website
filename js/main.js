@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Features Carousel Logic ---
-    const featureCards = document.querySelectorAll('.feature-card');
+    const featureCards = document.querySelectorAll('.feature-card, .team-card');
     if (featureCards.length > 0) {
         const dots = document.querySelectorAll('.dot');
         const prevBtn = document.getElementById('prevBtn');

@@ -22,176 +22,194 @@
 </head>
 
 <body>
+    <!-- Dark Theme Applied -->
 
-    <!-- Navigation Bar -->
-    <nav>
-        <div class="nav-container">
-            <a href="index.html" class="logo">EcoMart</a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="research.html">Research</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+    <body class="dark-theme">
 
-    <!-- Main Content -->
-    <main>
-        <section class="intro_message">
-            <h1>Welcome to EcoMart</h1>
-            <p>Your one-stop shop for sustainable lifestyle products.</p>
-            <br>
-            <!-- 
-                INLINE CSS 
-                Justification: Using inline CSS to apply specific override for this button's margin and shadow emphasis. 
-            -->
-            <a href="products.html" class="btn" style="margin-top: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.2);">Shop
-                Now</a>
-        </section>
-
-        <section class="container features-section">
-            <h2 style="text-align: center; margin-bottom: 2rem; color: #2E7D32;">Why Choose Us?</h2>
-
-            <div class="carousel-container">
-                <button class="carousel-btn prev-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
-
-                <div class="features-carousel">
-                    <!-- Card 1 -->
-                    <div class="feature-card" data-index="0">
-                        <h3>Sustainable Materials</h3>
-                        <p>All our products are made from 100% eco-friendly materials like bamboo, organic cotton, and
-                            recycled metals.</p>
-                    </div>
-                    <!-- Card 2 -->
-                    <div class="feature-card" data-index="1">
-                        <h3>Ethical Sourcing</h3>
-                        <p>We work directly with artisans and verify fair trade practices for every item we sell.</p>
-                    </div>
-                    <!-- Card 3 -->
-                    <div class="feature-card" data-index="2">
-                        <h3>Carbon Neutral</h3>
-                        <p>Every purchase helps plant a tree. We are committed to a net-zero carbon footprint.</p>
-                    </div>
-                    <!-- Card 4 -->
-                    <div class="feature-card" data-index="3">
-                        <h3>Community Support</h3>
-                        <p>We invest 5% of our profits into local community development projects.</p>
-                    </div>
-                    <!-- Card 5 -->
-                    <div class="feature-card" data-index="4">
-                        <h3>Plastic Free</h3>
-                        <p>Our packaging is 100% biodegradable and zero-waste confirmed.</p>
-                    </div>
-                </div>
-
-                <button class="carousel-btn next-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
-            </div>
-
-            <div class="carousel-dots">
-                <span class="dot active" data-index="0"></span>
-                <span class="dot" data-index="1"></span>
-                <span class="dot" data-index="2"></span>
-                <span class="dot" data-index="3"></span>
-                <span class="dot" data-index="4"></span>
-            </div>
-        </section>
-
-        <!-- Customer Reviews Section -->
-        <section class="reviews container">
-            <h2 style="text-align: center; margin-bottom: 2rem; color: #2E7D32;">What Our Customers Say</h2>
-            <div class="review-grid">
-                <!-- Review 1 -->
-                <div class="review-card">
-                    <img src="Assets/person 3.PNG" alt="Razan Nepali" class="review-img">
-                    <div class="stars">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                            class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="review-text">"Amazing quality! The bamboo water bottle is my new favorite daily
-                        essential."</p>
-                    <h4 class="customer-name">Razan Nepali</h4>
-                </div>
-                <!-- Review 2 -->
-                <div class="review-card">
-                    <img src="Assets/person 4.PNG" alt="Susan Khadka" class="review-img">
-                    <div class="stars">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                            class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <p class="review-text">"Great initiative. I love the transparency in ethical sourcing. Highly
-                        recommended!"</p>
-                    <h4 class="customer-name">Susan Khadka</h4>
-                </div>
-                <!-- Review 3 -->
-                <div class="review-card">
-                    <img src="Assets/person 1.PNG" alt="Preety Aley" class="review-img">
-                    <div class="stars">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                            class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="review-text">"The organic cotton tote is surprisingly sturdy and looks super chic."</p>
-                    <h4 class="customer-name">Preety Aley</h4>
-                </div>
-                <!-- Review 4 -->
-                <div class="review-card">
-                    <img src="Assets/person 2.PNG" alt="Shreya Mager" class="review-img">
-                    <div class="stars">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                            class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="review-text">"Finally a store that aligns with my values. The shipping was fast and
-                        eco-friendly."</p>
-                    <h4 class="customer-name">Shreya Mager</h4>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section about">
-                <h3>EcoMart</h3>
-                <p>Leading the way to a sustainable future with eco-friendly products for every need.</p>
-            </div>
-            <div class="footer-section links">
-                <h3>Quick Links</h3>
-                <ul>
+        <!-- Navigation Bar -->
+        <nav>
+            <div class="nav-container">
+                <a href="index.html" class="logo">EcoMart</a>
+                <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html">Shop</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="research.html">Research</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
-            <div class="footer-section newsletter">
-                <h3>Newsletter</h3>
-                <p>Subscribe to get the latest updates and offers.</p>
-                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed!');">
-                    <input type="email" placeholder="Enter your email" required>
-                    <button type="submit" class="btn">Subscribe</button>
-                </form>
-            </div>
-            <div class="footer-section Contact">
-                <h3>Contact Us</h3>
-                <p>Email: support@ecomart.com</p>
-                <p>Phone: +1 234 567 890</p>
-                <div class="socials">
-                    <a href="#" class="social-icon facebook"><i class="fab fa-facebook"></i></a>
-                    <a href="#" class="social-icon reddit"><i class="fab fa-reddit"></i></a>
-                    <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-icon linkedin"><i class="fab fa-linkedin"></i></a>
+        </nav>
+
+        <!-- Main Content -->
+        <main>
+            <section class="intro_message">
+                <h1>Welcome to EcoMart</h1>
+                <p>Your one-stop shop for sustainable lifestyle products.</p>
+                <br>
+                <!-- 
+                INLINE CSS 
+                Justification: Using inline CSS to apply specific override for this button's margin and shadow emphasis. 
+            -->
+                <a href="products.html" class="btn"
+                    style="margin-top: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.2);">Shop
+                    Now</a>
+            </section>
+
+            <section class="container features-section">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <h2
+                        style="color: var(--primary-color); display: inline-block; border-bottom: 2px solid var(--primary-color); padding-bottom: 5px;">
+                        Why Choose Us?</h2>
+                </div>
+
+                <div class="carousel-container">
+                    <button class="carousel-btn prev-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+
+                    <div class="features-carousel">
+                        <!-- Card 1 -->
+                        <div class="feature-card" data-index="0">
+                            <h3>Sustainable Materials</h3>
+                            <p>All our products are made from 100% eco-friendly materials like bamboo, organic cotton,
+                                and
+                                recycled metals.</p>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="feature-card" data-index="1">
+                            <h3>Ethical Sourcing</h3>
+                            <p>We work directly with artisans and verify fair trade practices for every item we sell.
+                            </p>
+                        </div>
+                        <!-- Card 3 -->
+                        <div class="feature-card" data-index="2">
+                            <h3>Carbon Neutral</h3>
+                            <p>Every purchase helps plant a tree. We are committed to a net-zero carbon footprint.</p>
+                        </div>
+                        <!-- Card 4 -->
+                        <div class="feature-card" data-index="3">
+                            <h3>Community Support</h3>
+                            <p>We invest 5% of our profits into local community development projects.</p>
+                        </div>
+                        <!-- Card 5 -->
+                        <div class="feature-card" data-index="4">
+                            <h3>Plastic Free</h3>
+                            <p>Our packaging is 100% biodegradable and zero-waste confirmed.</p>
+                        </div>
+                    </div>
+
+                    <button class="carousel-btn next-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+
+                <div class="carousel-dots">
+                    <span class="dot active" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
+                    <span class="dot" data-index="2"></span>
+                    <span class="dot" data-index="3"></span>
+                    <span class="dot" data-index="4"></span>
+                </div>
+            </section>
+
+            <!-- Customer Reviews Section -->
+            <section class="reviews">
+                <div class="container">
+                    <h2 style="text-align: center; margin-bottom: 2rem; color: var(--primary-color);">What Our Customers
+                        Say
+                    </h2>
+                    <div class="review-grid">
+                        <!-- Review 1 -->
+                        <div class="review-card">
+                            <img src="Assets/person 3.PNG" alt="Razan Nepali" class="review-img">
+                            <div class="stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="review-text">"Amazing quality! The bamboo water bottle is my new favorite daily
+                                essential."</p>
+                            <h4 class="customer-name">Razan Nepali</h4>
+                        </div>
+                        <!-- Review 2 -->
+                        <div class="review-card">
+                            <img src="Assets/person 4.PNG" alt="Susan Khadka" class="review-img">
+                            <div class="stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <p class="review-text">"Great initiative. I love the transparency in ethical sourcing.
+                                Highly
+                                recommended!"</p>
+                            <h4 class="customer-name">Susan Khadka</h4>
+                        </div>
+                        <!-- Review 3 -->
+                        <div class="review-card">
+                            <img src="Assets/person 1.PNG" alt="Preety Aley" class="review-img">
+                            <div class="stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="review-text">"The organic cotton tote is surprisingly sturdy and looks super
+                                chic."
+                            </p>
+                            <h4 class="customer-name">Preety Aley</h4>
+                        </div>
+                        <!-- Review 4 -->
+                        <div class="review-card">
+                            <img src="Assets/person 2.PNG" alt="Shreya Mager" class="review-img">
+                            <div class="stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="review-text">"Finally a store that aligns with my values. The shipping was fast
+                                and
+                                eco-friendly."</p>
+                            <h4 class="customer-name">Shreya Mager</h4>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h3>EcoMart</h3>
+                    <p>Leading the way to a sustainable future with eco-friendly products for every need.</p>
+                </div>
+                <div class="footer-section links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Shop</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section newsletter">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get the latest updates and offers.</p>
+                    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed!');">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn">Subscribe</button>
+                    </form>
+                </div>
+                <div class="footer-section Contact">
+                    <h3>Contact Us</h3>
+                    <p>Email: support@ecomart.com</p>
+                    <p>Phone: +1 234 567 890</p>
+                    <div class="socials">
+                        <a href="#" class="social-icon facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-icon reddit"><i class="fab fa-reddit"></i></a>
+                        <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon linkedin"><i class="fab fa-linkedin"></i></a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 EcoMart. All rights reserved.</p>
-        </div>
-    </footer>
+            <div class="footer-bottom">
+                <p>&copy; 2026 EcoMart. All rights reserved.</p>
+            </div>
+        </footer>
 
-    <script src="js/main.js"></script>
-</body>
+        <script src="js/main.js"></script>
+    </body>
 
 </html>

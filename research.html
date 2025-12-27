@@ -8,24 +8,73 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-    <!-- INTERNAL CSS: Table styling -->
+    <!-- INTERNAL CSS: Research specific styles -->
     <style>
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 2rem 0;
-            background: white;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
         }
 
-        .comparison-table th,
-        .comparison-table td {
-            border: 1px solid #ddd;
-            padding: 1rem;
-            text-align: left;
+        .research-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid #eee;
+            border-top: 4px solid var(--primary-color);
         }
 
-        .comparison-table th {
+        .research-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .research-card h2 {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.4rem;
+        }
+
+        .research-meta {
+            color: #888;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+            font-style: italic;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .research-summary {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .read-more-btn {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            width: fit-content;
+        }
+
+        .read-more-btn:hover {
             background-color: var(--primary-color);
             color: white;
         }
@@ -57,7 +106,7 @@
     </style>
 </head>
 
-<body>
+<body class="dark-theme">
 
     <nav>
         <div class="nav-container">
@@ -74,67 +123,79 @@
     </nav>
 
     <main class="container">
-        <h1>Website Research & Comparison</h1>
-        <p>This section contrasts the components used in EcoMart against standard e-commerce practices and a reference
-            website (e.g., "GenericShop").</p>
+        <h1 style="margin: 1rem 0; text-align: center; color: var(--text-dark);">Sustainability Research</h1>
+        <p style="text-align: center; color: #666; margin-bottom: 3rem;">Explaining the foundational studies and
+            agreements that shape our understanding of sustainable development.</p>
 
-        <table class="comparison-table">
-            <thead>
-                <tr>
-                    <th>Component / Feature</th>
-                    <th>EcoMart (Our Website)</th>
-                    <th>GenericShop (Investigated Website)</th>
-                    <th>Contrast / Reason</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Navigation Bar</td>
-                    <td>Sticky, highlighting active page with JS.</td>
-                    <td>Static, no active state indication.</td>
-                    <td>Improves user orientation and navigation flow.</td>
-                </tr>
-                <tr>
-                    <td>Product Display</td>
-                    <td>Dynamic rendering via JavaScript array.</td>
-                    <td>Hardcoded HTML items.</td>
-                    <td>Allows easier scalability and data management.</td>
-                </tr>
-                <tr>
-                    <td>Forms</td>
-                    <td>Client-side validation with custom alerts.</td>
-                    <td>Basic HTML5 validation only.</td>
-                    <td>Enhances user experience by providing immediate, specific feedback.</td>
-                </tr>
-                <tr>
-                    <td>Responsiveness</td>
-                    <td>CSS Grid and Flexbox for mobile-first design.</td>
-                    <td>Fixed width containers.</td>
-                    <td>Ensures accessibility across all device sizes.</td>
-                </tr>
-                <tr>
-                    <td>Aesthetics</td>
-                    <td>Nature-themed color palette (Greens/Earth tones).</td>
-                    <td>Generic Blue/White corporate theme.</td>
-                    <td>Aligns visual identity with the sustainable mission.</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="research-grid">
+            <!-- Research 1 -->
+            <article class="research-card">
+                <div>
+                    <h2>Our Common Future (Brundtland Report)</h2>
+                    <div class="research-meta">
+                        <i class="far fa-file-alt"></i> Published: 1987
+                    </div>
+                    <p class="research-summary">
+                        Published by the World Commission on Environment and Development (WCED), this landmark report
+                        introduced the modern definition of "sustainable development": meeting present needs without
+                        compromising future generations.
+                    </p>
+                </div>
+                <a href="https://sustainabledevelopment.un.org/content/documents/5987our-common-future.pdf"
+                    target="_blank" class="read-more-btn">Read Report</a>
+            </article>
 
-        <section class="references">
-            <!-- INLINE CSS: Header style -->
-            <h2 style="border-bottom: 2px solid var(--accent-color); display: inline-block; margin-bottom: 1rem;">
-                References</h2>
-            <p>The following websites were investigated for design patterns and components:</p>
-            <ul>
-                <li><a href="https://www.w3schools.com" target="_blank">W3Schools (HTML/CSS Standards)</a></li>
-                <li><a href="https://developer.mozilla.org" target="_blank">MDN Web Docs (JavaScript Best Practices)</a>
-                </li>
-                <li><a href="https://www.awwwards.com" target="_blank">Awwwards (Design Inspiration)</a></li>
-                <li><a href="https://css-tricks.com" target="_blank">CSS-Tricks (Layout Techniques)</a></li>
-                <li><a href="https://getbootstrap.com" target="_blank">Bootstrap (Component Structures)</a></li>
-            </ul>
-        </section>
+            <!-- Research 2 -->
+            <article class="research-card">
+                <div>
+                    <h2>The Limits to Growth</h2>
+                    <div class="research-meta">
+                        <i class="far fa-file-alt"></i> Published: 1972
+                    </div>
+                    <p class="research-summary">
+                        A groundbreaking study commissioned by the Club of Rome. It used computer modeling to predict
+                        the consequences of exponential economic and population growth with finite resource supplies,
+                        sparking global debate on sustainability.
+                    </p>
+                </div>
+                <a href="https://www.clubofrome.org/publication/the-limits-to-growth/" target="_blank"
+                    class="read-more-btn">Read More</a>
+            </article>
+
+            <!-- Research 3 -->
+            <article class="research-card">
+                <div>
+                    <h2>The Paris Agreement</h2>
+                    <div class="research-meta">
+                        <i class="far fa-handshake"></i> Adopted: 2015
+                    </div>
+                    <p class="research-summary">
+                        A legally binding international treaty on climate change adopted at COP21. Its goal is to limit
+                        global warming to well below 2, preferably to 1.5 degrees Celsius, compared to pre-industrial
+                        levels.
+                    </p>
+                </div>
+                <a href="https://unfccc.int/process-and-meetings/the-paris-agreement/the-paris-agreement"
+                    target="_blank" class="read-more-btn">Read Agreement</a>
+            </article>
+
+            <!-- Research 4 -->
+            <article class="research-card">
+                <div>
+                    <h2>Agenda 21</h2>
+                    <div class="research-meta">
+                        <i class="far fa-list-alt"></i> Published: 1992
+                    </div>
+                    <p class="research-summary">
+                        A comprehensive plan of action to be taken globally, nationally, and locally by organizations of
+                        the United Nations System, Governments, and Major Groups in every area in which humans impact
+                        the environment.
+                    </p>
+                </div>
+                <a href="https://sustainabledevelopment.un.org/outcomedocuments/agenda21" target="_blank"
+                    class="read-more-btn">Read More</a>
+            </article>
+        </div>
     </main>
 
     <footer>
