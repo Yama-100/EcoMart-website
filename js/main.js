@@ -109,7 +109,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Navigation Scroll Effect
 window.addEventListener('scroll', function () {
     const nav = document.querySelector('nav');
     if (nav) {
@@ -120,6 +119,37 @@ window.addEventListener('scroll', function () {
         }
     }
 });
+
+// Mobile Navigation Toggle
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (hamburger) {
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        const menuLinks = document.querySelectorAll('.nav-links a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            }
+        });
+    }
+});
+
 
 /**
  * Validates the contact form on submission.

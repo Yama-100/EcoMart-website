@@ -142,6 +142,36 @@ nav.nav-scrolled {
     color: var(--accent-color);
 }
 
+/* Hamburger Menu Icon */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-light);
+    margin: 3px 0;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+
 /* Footer */
 footer {
     background-color: var(--text-dark);
@@ -657,4 +687,483 @@ footer {
     align-items: center;
     justify-content: center;
     border: 2px solid white;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - MEDIA QUERIES
+   ======================================== */
+
+/* Tablet and Below (768px) */
+@media screen and (max-width: 768px) {
+
+    /* Typography Scaling */
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+    }
+
+    h4 {
+        font-size: 1.1rem;
+    }
+
+    /* Container Padding */
+    .container {
+        padding: 1.5rem;
+    }
+
+    /* Navigation */
+    .nav-container {
+        padding: 0 1rem;
+    }
+
+    /* Show Hamburger Menu on Mobile */
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        position: fixed;
+        top: 60px;
+        right: -100%;
+        background-color: var(--primary-color);
+        width: 70%;
+        max-width: 300px;
+        height: calc(100vh - 60px);
+        padding: 2rem 0;
+        transition: right 0.3s ease;
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links li {
+        margin: 0;
+        padding: 1rem 2rem;
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+        width: 100%;
+    }
+
+    /* Hero Section */
+    .intro_message {
+        min-height: 70vh;
+        padding: 0 1rem;
+        background-attachment: scroll;
+    }
+
+    .intro_message h1 {
+        font-size: 2.5rem;
+    }
+
+    .intro_message p {
+        font-size: 1.2rem;
+    }
+
+    /* Features Section */
+    .features-section {
+        min-height: auto;
+        padding: 3rem 0;
+    }
+
+    /* Carousel Container */
+    .carousel-container {
+        height: 450px;
+        padding: 0 10px;
+    }
+
+    /* Feature and Team Cards */
+    .feature-card,
+    .team-card {
+        width: 220px;
+        height: 300px;
+        padding: 1.5rem;
+    }
+
+    .feature-card.active,
+    .team-card.active {
+        transform: translateX(0) scale(1.1);
+    }
+
+    .feature-card.prev,
+    .team-card.prev {
+        transform: translateX(-100%) scale(0.85);
+    }
+
+    .feature-card.next,
+    .team-card.next {
+        transform: translateX(100%) scale(0.85);
+    }
+
+    /* Carousel Buttons */
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    .prev-btn {
+        left: 5px;
+    }
+
+    .next-btn {
+        right: 5px;
+    }
+
+    /* Review Grid */
+    .review-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        padding: 0 1rem;
+    }
+
+    .footer-section {
+        margin-bottom: 1.5rem;
+        padding: 0;
+        text-align: center;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+
+    .newsletter-form input {
+        border-radius: 4px;
+        border-right: 1px solid rgba(255, 255, 255, 0.2);
+        margin-bottom: 0.5rem;
+    }
+
+    .newsletter-form button {
+        border-radius: 4px;
+        padding: 0.75rem;
+    }
+
+    /* Product Grid */
+    .product-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    /* Floating Cart Button */
+    .cart-fab {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+
+    .fab-container {
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+/* Mobile Devices (600px and below) */
+@media screen and (max-width: 600px) {
+
+    /* Further Typography Reduction */
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.35rem;
+    }
+
+    h3 {
+        font-size: 1.15rem;
+    }
+
+    /* Container */
+    .container {
+        padding: 1rem;
+    }
+
+    /* Hero Section */
+    .intro_message h1 {
+        font-size: 2rem;
+    }
+
+    .intro_message p {
+        font-size: 1rem;
+    }
+
+    /* Carousel - Simplified for small screens */
+    .carousel-container {
+        height: 400px;
+    }
+
+    .feature-card,
+    .team-card {
+        width: 200px;
+        height: 280px;
+        padding: 1.25rem;
+    }
+
+    /* Fix team card text overflow - smaller font and flexible height */
+    .team-card {
+        height: auto;
+        min-height: 280px;
+        max-height: 320px;
+        overflow: hidden;
+    }
+
+    .team-card p {
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+
+    .team-card h3 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .team-card .avatar {
+        font-size: 1.5rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .team-card .role {
+        font-size: 0.85rem;
+        margin-bottom: 0.75rem;
+    }
+
+
+    .feature-card.active,
+    .team-card.active {
+        transform: translateX(0) scale(1.05);
+    }
+
+    .feature-card.prev,
+    .team-card.prev {
+        transform: translateX(-90%) scale(0.8);
+        opacity: 0.5;
+    }
+
+    .feature-card.next,
+    .team-card.next {
+        transform: translateX(90%) scale(0.8);
+        opacity: 0.5;
+    }
+
+    /* Reviews */
+    .reviews {
+        padding: 3rem 1rem;
+    }
+
+    .review-card {
+        padding: 1.5rem;
+    }
+
+    /* Buttons */
+    .btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.95rem;
+    }
+
+    /* Product Cards */
+    .product-card {
+        padding: 0.75rem;
+    }
+
+    .product-image {
+        height: 180px;
+    }
+}
+
+/* Small Mobile Devices (480px and below) */
+@media screen and (max-width: 480px) {
+
+    /* Ultra-compact Typography */
+    .intro_message h1 {
+        font-size: 1.75rem;
+    }
+
+    .intro_message p {
+        font-size: 0.95rem;
+    }
+
+    /* Logo */
+    .logo {
+        font-size: 1.25rem;
+    }
+
+    /* Navigation */
+    .nav-links {
+        width: 85%;
+    }
+
+    /* Carousel */
+    .carousel-container {
+        height: 380px;
+    }
+
+    .feature-card,
+    .team-card {
+        width: 180px;
+        height: 260px;
+        padding: 1rem;
+    }
+
+    /* Enhanced team card fixes for small mobile */
+    .team-card {
+        height: auto;
+        min-height: 260px;
+        max-height: 300px;
+    }
+
+    .feature-card h3,
+    .team-card h3 {
+        font-size: 1rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .feature-card p,
+    .team-card p {
+        font-size: 0.85rem;
+    }
+
+    /* Additional team-specific adjustments */
+    .team-card p {
+        font-size: 0.75rem;
+        line-height: 1.35;
+    }
+
+    .team-card .avatar {
+        font-size: 1.35rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .team-card .role {
+        font-size: 0.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+
+    .feature-card.prev,
+    .team-card.prev {
+        transform: translateX(-85%) scale(0.75);
+        opacity: 0.4;
+    }
+
+    .feature-card.next,
+    .team-card.next {
+        transform: translateX(85%) scale(0.75);
+        opacity: 0.4;
+    }
+
+    /* Carousel Buttons Smaller */
+    .carousel-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+
+    /* Carousel Dots */
+    .dot {
+        height: 12px;
+        width: 12px;
+    }
+
+    /* Review Cards */
+    .review-img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .review-text {
+        font-size: 0.85rem;
+    }
+
+    /* Footer */
+    .footer-section h3 {
+        font-size: 1rem;
+    }
+
+    .footer-section ul li a {
+        font-size: 0.85rem;
+    }
+
+    /* Socials */
+    .socials a {
+        font-size: 1rem;
+        margin-right: 0.75rem;
+    }
+
+    /* Cart FAB */
+    .cart-fab {
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
+    }
+
+    .cart-count {
+        width: 20px;
+        height: 20px;
+        font-size: 0.7rem;
+    }
+}
+
+/* Landscape Mobile Optimization */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    .intro_message {
+        min-height: 100vh;
+    }
+
+    .intro_message h1 {
+        font-size: 2rem;
+    }
+
+    .intro_message p {
+        font-size: 1rem;
+    }
+
+    .carousel-container {
+        height: 300px;
+    }
+
+    .feature-card,
+    .team-card {
+        height: 220px;
+    }
+}
+
+/* Tablet Optimization (768px to 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        padding: 1.75rem;
+    }
+
+    .intro_message h1 {
+        font-size: 3.5rem;
+    }
+
+    .intro_message p {
+        font-size: 1.35rem;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .review-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
