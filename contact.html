@@ -50,6 +50,22 @@
         .input-error {
             border-color: #d32f2f !important;
         }
+
+        main.container {
+            padding-top: 5rem;
+        }
+
+        /* Nav text color for white background */
+        nav .logo,
+        nav .nav-links a {
+            color: var(--text-dark);
+        }
+
+        /* Revert to white when scrolled */
+        nav.nav-scrolled .logo,
+        nav.nav-scrolled .nav-links a {
+            color: var(--text-light);
+        }
     </style>
 </head>
 

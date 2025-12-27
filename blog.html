@@ -32,7 +32,24 @@
 
         .content {
             line-height: 1.8;
+            line-height: 1.8;
             margin-bottom: 1rem;
+        }
+
+        main.container {
+            padding-top: 5rem;
+        }
+
+        /* Nav text color for white background */
+        nav .logo,
+        nav .nav-links a {
+            color: var(--text-dark);
+        }
+
+        /* Revert to white when scrolled */
+        nav.nav-scrolled .logo,
+        nav.nav-scrolled .nav-links a {
+            color: var(--text-light);
         }
     </style>
 </head>
