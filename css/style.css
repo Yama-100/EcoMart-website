@@ -212,9 +212,8 @@ footer {
     text-align: center;
     position: absolute;
     /* Using absolute positioning for stacking */
-    width: 270px;
-    /* Reduced width as requested */
-    height: 350px;
+    width: 256px;
+    height: 332px;
     transition: all 0.5s ease;
     opacity: 0;
     z-index: 0;
