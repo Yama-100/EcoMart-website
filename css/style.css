@@ -158,10 +158,11 @@ nav.nav-scrolled {
     margin: 3px 0;
     transition: all 0.3s ease;
     border-radius: 2px;
+    transform-origin: center;
 }
 
 .hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(8px, 8px);
+    transform: translateY(9px) rotate(45deg);
 }
 
 .hamburger.active span:nth-child(2) {
@@ -169,7 +170,7 @@ nav.nav-scrolled {
 }
 
 .hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(8px, -8px);
+    transform: translateY(-9px) rotate(-45deg);
 }
 
 
