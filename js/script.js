@@ -122,16 +122,28 @@ function renderProducts(filter = 'All Categories') {
         filteredProducts = products.filter(p => p.category.includes(filter) || filter === 'All Categories');
     }
 
-    filteredProducts.slice(0, state.visibleProducts).forEach(product => {
+    filteredProducts.slice(0, state.visibleProducts).forEach((product, index) => {
         const card = document.createElement('div');
         card.className = 'product-card animate-in';
+
+        // Add specific span logic if needed for layout visual variations beyond Nth-child CSS
+        // For example, if we want to force specific items to be tall via JS instead of CSS:
+        // if (index === 2) card.classList.add('span-tall'); 
+
         card.innerHTML = `
-            <div class="product-img">
-                <img src="${product.image}" alt="${product.name}" style="width:100%;height:100%;object-fit:cover;border-radius:8px;">
+            <div class="product-img-wrapper">
+                <img src="${product.image}" alt="${product.name}">
             </div>
-            <h3>${product.name}</h3>
-            <p class="price">$${product.price.toFixed(2)}</p>
-            <button class="btn-add" onclick="addToCart(${product.id})">Add to Cart</button>
+            <div class="card-details">
+                <span class="category-label">${product.category}</span>
+                <h3>${product.name}</h3>
+                <div class="card-bottom-row">
+                    <p class="price">$${product.price.toFixed(2)}</p>
+                    <button class="btn-add-circle" onclick="addToCart(${product.id})" title="Add to Cart">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+            </div>
         `;
         grid.appendChild(card);
     });
