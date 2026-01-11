@@ -112,48 +112,58 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // 1. Render Products to Grid
 function renderProducts(filter = 'All Categories') {
-    const grid = dom.productGrid();
-    if (!grid) return; // Guard for homepage specific
+    const bestDealsGrid = document.getElementById('best-deals-grid');
+    const justForYouGrid = document.getElementById('just-for-you-grid');
 
-    grid.innerHTML = '';
+    // Clear both
+    if (bestDealsGrid) bestDealsGrid.innerHTML = '';
+    if (justForYouGrid) justForYouGrid.innerHTML = '';
 
     let filteredProducts = products;
     if (filter !== 'All Categories') {
         filteredProducts = products.filter(p => p.category.includes(filter) || filter === 'All Categories');
     }
 
-    filteredProducts.slice(0, state.visibleProducts).forEach((product, index) => {
-        const card = document.createElement('div');
-        // Match user's container class 'product-card'. 
-        // We keep 'animate-in' for the fade effect.
-        card.className = 'product-card animate-in';
+    // Populate Best Deals (first 4 items for example)
+    if (bestDealsGrid) {
+        filteredProducts.slice(0, 4).forEach((product) => {
+            createProductCard(product, bestDealsGrid);
+        });
+    }
 
-        // Add specific span logic for layout (3rd item spans 2 rows)
-        // The CSS handles :nth-child(5n+3), but if we needed specific logic we could add it here.
-        // We will rely on the CSS selector .product-card:nth-child(5n + 3) which works on the rendered DOM order.
-
-        card.innerHTML = `
-            <div class="product-image">
-                <img src="${product.image}" alt="${product.name}">
-            </div>
-            <div class="product-details">
-                <div class="product-tags">${product.category}</div>
-                <h3 class="product-title">${product.name}</h3>
-                <div class="product-price">
-                    $${product.price.toFixed(2)}
-                    <button class="add-to-cart-btn" onclick="addToCart(${product.id})" title="Add to Cart">
-                        <i class="fas fa-plus"></i>
-                    </button>
-                </div>
-            </div>
-        `;
-        grid.appendChild(card);
-    });
+    // Populate Just For You (remaining or all?)
+    // Let's show specific set or shuffled. For now, showing the rest or same set to fill.
+    if (justForYouGrid) {
+        filteredProducts.slice(0, state.visibleProducts).forEach((product) => {
+            createProductCard(product, justForYouGrid);
+        });
+    }
 
     // Hide "Show More" if all products are shown
     if (dom.showMoreBtn()) {
         dom.showMoreBtn().style.display = (state.visibleProducts >= filteredProducts.length) ? 'none' : 'block';
     }
+}
+
+function createProductCard(product, container) {
+    const card = document.createElement('div');
+    card.className = 'product-card animate-in';
+    card.innerHTML = `
+        <div class="product-image">
+            <img src="${product.image}" alt="${product.name}">
+        </div>
+        <div class="product-details">
+            <div class="product-tags">${product.category}</div>
+            <h3 class="product-title">${product.name}</h3>
+            <div class="product-price">
+                $${product.price.toFixed(2)}
+                <button class="add-to-cart-btn" onclick="addToCart(${product.id})" title="Add to Cart">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </div>
+        </div>
+    `;
+    container.appendChild(card);
 }
 
 // 2. Search Functionality

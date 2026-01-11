@@ -74,14 +74,16 @@ body {
 	justify-content: center;
 	text-decoration: none;
 	color: #555;
-	font-size: 13px;
+	font-size: 11px;
+	/* Reduced from 13px */
 	font-weight: 500;
 	gap: 6px;
 	transition: color 0.3s;
 }
 
 .nav-left a i {
-	font-size: 20px;
+	font-size: 16px;
+	/* Reduced from 20px */
 	color: #777;
 	transition: color 0.3s;
 }
@@ -120,7 +122,8 @@ body {
 	justify-content: center;
 	text-decoration: none;
 	color: #555;
-	font-size: 13px;
+	font-size: 11px;
+	/* Reduced from 13px */
 	font-weight: 500;
 	gap: 6px;
 	transition: color 0.3s;
@@ -128,7 +131,8 @@ body {
 }
 
 .nav-right .icon-link i {
-	font-size: 20px;
+	font-size: 16px;
+	/* Reduced from 20px */
 	color: #777;
 }
 
@@ -318,14 +322,24 @@ body {
 /* === PRODUCT CARDS (User Supplied) === */
 .product-grid {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 24px;
+	/* Changed to 4 columns to make cards smaller */
+	grid-template-columns: repeat(4, 1fr);
+	gap: 20px;
 	margin-bottom: 40px;
 }
 
-.product-card:nth-child(5n + 3) {
+/* Updated Masonry Logic for 4 Columns (Optional, or disabled for uniform small cards) */
+/* Disabling huge spans to keep cards "Small" as requested, or we can make the first one span */
+/* .product-card:nth-child(5n + 3) {
 	grid-column: span 1;
-	grid-row: span 2;
+    grid-row: span 2;
+} */
+/* If we want the 3rd one to still define the masonry feel but smaller: */
+.product-card:nth-child(9n + 1) {
+	/* Maybe make the first of every 9 large? or just disable for now to ensure "smaller" */
+	/* Keeping it simple for "smaller" request usually means uniform grid */
+	grid-column: span 1;
+	grid-row: span 1;
 }
 
 .product-card {
