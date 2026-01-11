@@ -1,0 +1,628 @@
+/* 
+  ========================================
+  ECOMART - ABOUT US PAGE
+  ========================================
+  Clean, Professional, Eco-Friendly
+  No Empty Space - Fully Responsive
+*/
+
+/* BASE & RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #fafafa;
+    color: #333;
+    line-height: 1.7;
+}
+
+.container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.bg-light {
+    background: #f5f5f0 !important;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    color: #2d5f3f;
+    margin-bottom: 56px;
+}
+
+/* === HEADER (Reused from homepage) === */
+.main-header {
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 20px;
+}
+
+.nav-left {
+    display: flex;
+    gap: 28px;
+    flex: 1;
+}
+
+.nav-left a {
+    text-decoration: none;
+    color: #444;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-left a:hover {
+    color: #6b9e78;
+}
+
+.logo h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #2d5f3f;
+}
+
+.nav-right {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.nav-right a {
+    text-decoration: none;
+    color: #444;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.nav-right a:hover {
+    color: #6b9e78;
+}
+
+/* === HERO ABOUT === */
+.hero-about {
+    background: linear-gradient(135deg, #a8d5ba 0%, #6b9e78 100%);
+    padding: 120px 0;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 52px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: 20px;
+    opacity: 0.95;
+}
+
+/* === MISSION & VISION === */
+.mission-vision {
+    padding: 72px 0;
+    background: white;
+}
+
+.mv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.mv-card {
+    background: #f5f5f0;
+    padding: 48px 40px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.mv-card i {
+    font-size: 56px;
+    color: #6b9e78;
+    margin-bottom: 24px;
+}
+
+.mv-card h2 {
+    font-size: 28px;
+    color: #2d5f3f;
+    margin-bottom: 20px;
+}
+
+.mv-card p {
+    color: #555;
+    line-height: 1.8;
+}
+
+/* === OUR STORY === */
+.our-story {
+    padding: 72px 0;
+}
+
+.story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.story-text h2 {
+    font-size: 36px;
+    color: #2d5f3f;
+    margin-bottom: 28px;
+}
+
+.story-text p {
+    margin-bottom: 20px;
+    color: #555;
+    line-height: 1.8;
+}
+
+.story-image {
+    height: 500px;
+    background: linear-gradient(135deg, #c8e6c9 0%, #a5d6a7 100%);
+    border-radius: 12px;
+}
+
+/* === CORE VALUES === */
+.core-values {
+    padding: 72px 0;
+    background: white;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+}
+
+.value-card {
+    background: #f5f5f0;
+    padding: 40px 28px;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.value-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.value-card i {
+    font-size: 48px;
+    color: #6b9e78;
+    margin-bottom: 20px;
+}
+
+.value-card h3 {
+    font-size: 22px;
+    color: #2d5f3f;
+    margin-bottom: 16px;
+}
+
+.value-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* === IMPACT STATS === */
+.impact-stats {
+    padding: 72px 0;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+}
+
+.stat-card {
+    background: white;
+    padding: 48px 28px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.stat-number {
+    font-size: 48px;
+    font-weight: 700;
+    color: #6b9e78;
+    margin-bottom: 12px;
+}
+
+.stat-label {
+    font-size: 16px;
+    color: #666;
+    font-weight: 600;
+}
+
+/* === TEAM SECTION === */
+.team-section {
+    padding: 72px 0;
+    background: white;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+}
+
+.team-card {
+    background: #f5f5f0;
+    padding: 32px 24px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.team-photo {
+    width: 140px;
+    height: 140px;
+    background: linear-gradient(135deg, #c8e6c9, #81c784);
+    border-radius: 50%;
+    margin: 0 auto 24px;
+}
+
+.team-card h3 {
+    font-size: 20px;
+    color: #2d5f3f;
+    margin-bottom: 8px;
+}
+
+.team-role {
+    font-size: 14px;
+    color: #6b9e78;
+    font-weight: 600;
+    margin-bottom: 16px !important;
+}
+
+.team-card p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* === TIMELINE === */
+.timeline {
+    padding: 72px 0;
+}
+
+.timeline-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+}
+
+.timeline-item {
+    text-align: center;
+}
+
+.timeline-icon {
+    width: 80px;
+    height: 80px;
+    background: #6b9e78;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.timeline-icon i {
+    font-size: 36px;
+    color: white;
+}
+
+.timeline-content h3 {
+    font-size: 18px;
+    color: #2d5f3f;
+    margin-bottom: 12px;
+}
+
+.timeline-content p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* === CERTIFICATIONS === */
+.certifications {
+    padding: 72px 0;
+    background: white;
+}
+
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 24px;
+}
+
+.cert-logo {
+    background: #f5f5f0;
+    padding: 40px 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 700;
+    color: #6b9e78;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 120px;
+}
+
+/* === TESTIMONIALS === */
+.testimonials {
+    padding: 72px 0;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 36px 32px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.stars {
+    color: #f59e0b;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.testimonial-card p {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 24px;
+    line-height: 1.7;
+}
+
+.author {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.author-img {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #c8e6c9, #81c784);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.author strong {
+    display: block;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.author span {
+    font-size: 13px;
+    color: #999;
+}
+
+/* === CTA SECTION === */
+.cta-section {
+    background: linear-gradient(135deg, #2d5f3f 0%, #1f4429 100%);
+    padding: 88px 0;
+    text-align: center;
+    color: white;
+}
+
+.cta-section h2 {
+    font-size: 42px;
+    margin-bottom: 16px;
+}
+
+.cta-section p {
+    font-size: 20px;
+    margin-bottom: 36px;
+    opacity: 0.95;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.btn-primary,
+.btn-secondary {
+    padding: 16px 48px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: #6b9e78;
+    color: white;
+    border: 2px solid #6b9e78;
+}
+
+.btn-primary:hover {
+    background: #5a8766;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* === FAQ MINI === */
+.faq-mini {
+    padding: 72px 0;
+}
+
+.faq-list {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: white;
+    border: 1px solid #e8e8e0;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+
+.faq-q {
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.faq-q:hover {
+    background: #fafafa;
+}
+
+.faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.faq-item.active .faq-a {
+    max-height: 200px;
+    padding: 0 24px 20px;
+}
+
+.faq-item.active .faq-q i {
+    transform: rotate(180deg);
+}
+
+.faq-a p {
+    color: #666;
+    line-height: 1.7;
+}
+
+/* === FOOTER === */
+.footer-content {
+    background: #1a1a1a;
+    color: #bbb;
+    padding: 56px 0 32px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.footer-col h4 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 17px;
+}
+
+.footer-col a {
+    display: block;
+    color: #bbb;
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+
+.footer-col a:hover {
+    color: #6b9e78;
+}
+
+.footer-col p {
+    margin-bottom: 8px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.social-icons a {
+    font-size: 20px;
+    color: #bbb;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #6b9e78;
+}
+
+.footer-bottom {
+    background: #111;
+    color: #888;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+    .header-top {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .mv-grid,
+    .story-grid,
+    .values-grid,
+    .stats-grid,
+    .team-grid,
+    .timeline-wrapper,
+    .cert-grid,
+    .testimonial-grid,
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
