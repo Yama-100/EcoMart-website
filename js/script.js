@@ -84,6 +84,8 @@ const products = [
 // --- STATE MANAGEMENT ---
 const state = {
     cartCount: 0,
+    cartTotal: 0,
+    cartItems: [], // Array of {id, name, price, quantity, image}
     visibleProducts: 8, // Initial number of products to show in grid
     currentCategory: 'All Categories'
 };
@@ -226,25 +228,56 @@ function scrollToProduct(id) {
 }
 
 // 3. Cart & User Interactions
-function addToCart(id) {
-    state.cartCount++;
+function addToCart(id, event) {
+    const product = products.find(p => p.id === id);
+    if (!product) return;
+
+    // Check if item already in cart
+    const existingItem = state.cartItems.find(item => item.id === id);
+    if (existingItem) {
+        existingItem.quantity++;
+    } else {
+        state.cartItems.push({
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            quantity: 1,
+            image: product.image
+        });
+    }
+
+    // Update totals
+    state.cartCount = state.cartItems.reduce((sum, item) => sum + item.quantity, 0);
+    state.cartTotal = state.cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     updateCartDisplay();
 
-    const btn = event.target;
-    const originalText = btn.innerText;
-    btn.innerText = "Added! ✓";
-    btn.style.background = "#27ae60";
-    setTimeout(() => {
-        btn.innerText = originalText;
-        btn.style.background = "";
-    }, 2000);
+    // Visual Feedback on button
+    const btn = event ? event.currentTarget : window.event?.currentTarget;
+    if (btn) {
+        btn.innerHTML = `<i class="fas fa-check"></i> ADDED!`;
+        btn.classList.add('added');
+        btn.disabled = true;
+
+        setTimeout(() => {
+            btn.innerHTML = `<i class="fas fa-plus"></i>`;
+            btn.classList.remove('added');
+            btn.disabled = false;
+        }, 2000);
+    }
 }
 
 function updateCartDisplay() {
     const badge = document.querySelector('.cart-count');
+    const totalEl = document.querySelector('.cart-total');
+
     if (badge) {
         badge.innerText = state.cartCount;
         badge.style.display = state.cartCount > 0 ? 'flex' : 'none';
+    }
+
+    if (totalEl) {
+        totalEl.innerText = '$' + (state.cartTotal || 0).toFixed(2);
+        totalEl.style.display = state.cartCount > 0 ? 'block' : 'none';
     }
 }
 
@@ -252,12 +285,31 @@ function updateCartDisplay() {
 function setupEventListeners() {
     setupSearch();
 
-    // Show More
-    const showMore = dom.showMoreBtn();
-    if (showMore) {
-        showMore.addEventListener('click', () => {
-            state.visibleProducts += 4;
-            renderProducts(state.currentCategory);
+    // Show More Button
+    const showMoreBtn = dom.showMoreBtn();
+    if (showMoreBtn) {
+        showMoreBtn.addEventListener('click', () => {
+            if (showMoreBtn.innerText === 'Show More') {
+                state.visibleProducts += 8; // Show 8 more or all
+                // Could also just show all: state.visibleProducts = products.length;
+                renderProducts();
+
+                // If we've reached the end/all products, change to "Show Less"
+                // Or if we want strictly toggle behavior:
+                // For now, let's say if we are showing all, toggle text
+                if (state.visibleProducts >= products.length) {
+                    showMoreBtn.innerText = 'Show Less';
+                    state.visibleProducts = products.length; // Cap it
+                }
+            } else {
+                // "Show Less" clicked
+                state.visibleProducts = 8; // Reset to initial count
+                showMoreBtn.innerText = 'Show More';
+                renderProducts();
+
+                // Optionally scroll back up to the start of the grid
+                document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' });
+            }
         });
     }
 
@@ -286,10 +338,12 @@ function setupEventListeners() {
         });
     }
 
-    if (cartIcon) {
-        cartIcon.addEventListener('click', (e) => {
+    // Cart Icon - Show Modal
+    const cartLink = document.getElementById('cart-link');
+    if (cartLink) {
+        cartLink.addEventListener('click', (e) => {
             e.preventDefault();
-            alert(`Your Cart has ${state.cartCount} items.\nTotal: $${(state.cartCount * 10).toFixed(2)} (est)`);
+            showCartModal();
         });
     }
 
@@ -409,6 +463,57 @@ function logout() {
 
 // Initialize Auth State on Load
 document.addEventListener('DOMContentLoaded', updateNavbarProfile);
+
+// === CART MODAL FUNCTIONS ===
+function showCartModal() {
+    renderCartModal();
+    toggleModal('cart-modal');
+}
+
+function renderCartModal() {
+    const cartList = document.getElementById('cart-items-list');
+    const totalItemsEl = document.getElementById('cart-total-items');
+    const modalTotalEl = document.getElementById('cart-modal-total');
+
+    if (!cartList) return;
+
+    // Clear existing content
+    cartList.innerHTML = '';
+
+    // If cart is empty
+    if (state.cartItems.length === 0) {
+        cartList.innerHTML = `
+            <div class="cart-empty-message">
+                <i class="fas fa-shopping-cart"></i>
+                <p>Your cart is empty</p>
+            </div>
+        `;
+        if (totalItemsEl) totalItemsEl.innerText = '0';
+        if (modalTotalEl) modalTotalEl.innerText = '$0.00';
+        return;
+    }
+
+    // Render each cart item
+    state.cartItems.forEach(item => {
+        const cartItem = document.createElement('div');
+        cartItem.className = 'cart-item';
+        cartItem.innerHTML = `
+            <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+            <div class="cart-item-details">
+                <div class="cart-item-name">${item.name}</div>
+                <div class="cart-item-meta">
+                    <span class="cart-item-qty">Qty: ${item.quantity}</span>
+                    <span class="cart-item-price">$${item.price.toFixed(2)} each</span>
+                </div>
+            </div>
+        `;
+        cartList.appendChild(cartItem);
+    });
+
+    // Update totals
+    if (totalItemsEl) totalItemsEl.innerText = state.cartCount;
+    if (modalTotalEl) modalTotalEl.innerText = '$' + state.cartTotal.toFixed(2);
+}
 
 /* === ABOUT CAROUSEL LOGIC === */
 const aboutProfiles = [
