@@ -124,22 +124,24 @@ function renderProducts(filter = 'All Categories') {
 
     filteredProducts.slice(0, state.visibleProducts).forEach((product, index) => {
         const card = document.createElement('div');
+        // Match user's container class 'product-card'. 
+        // We keep 'animate-in' for the fade effect.
         card.className = 'product-card animate-in';
 
-        // Add specific span logic if needed for layout visual variations beyond Nth-child CSS
-        // For example, if we want to force specific items to be tall via JS instead of CSS:
-        // if (index === 2) card.classList.add('span-tall'); 
+        // Add specific span logic for layout (3rd item spans 2 rows)
+        // The CSS handles :nth-child(5n+3), but if we needed specific logic we could add it here.
+        // We will rely on the CSS selector .product-card:nth-child(5n + 3) which works on the rendered DOM order.
 
         card.innerHTML = `
-            <div class="product-img-wrapper">
+            <div class="product-image">
                 <img src="${product.image}" alt="${product.name}">
             </div>
-            <div class="card-details">
-                <span class="category-label">${product.category}</span>
-                <h3>${product.name}</h3>
-                <div class="card-bottom-row">
-                    <p class="price">$${product.price.toFixed(2)}</p>
-                    <button class="btn-add-circle" onclick="addToCart(${product.id})" title="Add to Cart">
+            <div class="product-details">
+                <div class="product-tags">${product.category}</div>
+                <h3 class="product-title">${product.name}</h3>
+                <div class="product-price">
+                    $${product.price.toFixed(2)}
+                    <button class="add-to-cart-btn" onclick="addToCart(${product.id})" title="Add to Cart">
                         <i class="fas fa-plus"></i>
                     </button>
                 </div>

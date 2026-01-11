@@ -13,6 +13,25 @@
 	box-sizing: border-box;
 }
 
+:root {
+	--primary-color: #2d5f3f;
+	--primary-light: #6b9e78;
+	--text-main: #333;
+	--bg-surface: #ffffff;
+	--bg-main: #f5f5f5;
+
+	--radius-lg: 16px;
+
+	--spacing-xs: 8px;
+	--spacing-md: 16px;
+
+	--shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+	--shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+
+	--transition-normal: all 0.3s ease;
+	--transition-fast: all 0.2s ease;
+}
+
 body {
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	background-color: #fafafa;
@@ -296,133 +315,110 @@ body {
 }
 
 /* === PRODUCT CARDS === */
+/* === PRODUCT CARDS (User Supplied) === */
 .product-grid {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	/* 3 Columns */
-	grid-auto-rows: 280px;
-	/* Fixed height for rows to allow spanning */
 	gap: 24px;
 	margin-bottom: 40px;
 }
 
-/* MASONRY / SPAN LOGIC */
-/* Assuming the 3rd item should be the tall one on the right, spanning 2 rows */
-/* Pattern: Small, Small (Col 1, 2) | Tall (Col 3) */
 .product-card:nth-child(5n + 3) {
-	grid-column: 3;
+	grid-column: span 1;
 	grid-row: span 2;
 }
 
-/* To ensure flow: 1, 2, 4, 5 fill the other spots? CSS Grid auto-placement can be tricky with specific spans. */
-/* Alternative Simple Logic based on reference image: 
-   Row 1: Card 1, Card 2, Card 3 (Tall)
-   Row 2: Card 4, Card 5 (Card 3 still taking this spot)
-   This works if we define the grid flow or specific placement.
-*/
-
 .product-card {
-	background: white;
-	border: 1px solid #f0f0f0;
-	border-radius: 20px;
-	padding: 16px;
+	background-color: var(--bg-surface);
+	border-radius: var(--radius-lg);
+	overflow: hidden;
+	transition: var(--transition-normal);
+	box-shadow: var(--shadow-sm);
+	border: 1px solid transparent;
 	display: flex;
 	flex-direction: column;
-	transition: all 0.3s ease;
-	position: relative;
 	height: 100%;
 }
 
 .product-card:hover {
-	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 	transform: translateY(-4px);
-	border-color: #e0e0e0;
+	box-shadow: var(--shadow-lg);
+	border-color: var(--primary-light);
 }
 
-.product-img-wrapper {
+.product-image {
 	width: 100%;
-	flex: 1;
-	/* Take available space */
-	background: #fdfdfd;
-	border: 1px solid #eee;
-	border-radius: 12px;
-	margin-bottom: 16px;
-	overflow: hidden;
-	position: relative;
-}
-
-.product-img-wrapper img {
-	width: 100%;
-	height: 100%;
-	object-fit: contain;
-	padding: 20px;
-	/* Reference shows generic placeholder with space */
-	transition: transform 0.5s ease;
-}
-
-.product-card:hover .product-img-wrapper img {
-	transform: scale(1.05);
-}
-
-.card-details {
-	display: flex;
-	flex-direction: column;
-	gap: 4px;
-}
-
-.category-label {
-	font-size: 11px;
-	text-transform: uppercase;
-	color: #1a4d2e;
-	font-weight: 700;
-	letter-spacing: 0.5px;
-}
-
-.product-card h3 {
-	font-size: 16px;
-	margin: 0;
-	color: #222;
-	font-weight: 600;
-}
-
-.card-bottom-row {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin-top: 8px;
-}
-
-.price {
-	font-size: 18px;
-	font-weight: 700;
-	color: #222;
-	/* Black price as often seen in clean designs */
-	margin: 0;
-}
-
-.btn-add-circle {
-	width: 36px;
-	height: 36px;
-	border-radius: 50%;
-	background: #f0f0f0;
-	color: #333;
-	border: none;
+	/* aspect-ratio: 1; Removed strict aspect ratio to allow flex-growth in taller cards if needed, OR keep it if visual consistency is key. Reference image implies consistent shapes. */
+	aspect-ratio: 1;
+	background-color: #FFFFFF;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	position: relative;
+	overflow: hidden;
+}
+
+.product-image img {
+	width: 90%;
+	height: 90%;
+	object-fit: cover;
+	transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image img {
+	transform: scale(1.05);
+}
+
+.product-details {
+	padding: var(--spacing-md);
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+.product-tags {
+	font-size: 0.75rem;
+	color: var(--primary-color);
+	font-weight: 600;
+	text-transform: uppercase;
+	margin-bottom: var(--spacing-xs);
+}
+
+.product-title {
+	font-size: 1rem;
+	font-weight: 600;
+	color: var(--text-main);
+	margin-bottom: var(--spacing-xs);
+	margin-top: 0;
+}
+
+.product-price {
+	font-size: 1.125rem;
+	font-weight: 700;
+	margin-top: auto;
+	color: var(--text-main);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.add-to-cart-btn {
+	width: 32px;
+	height: 32px;
+	background-color: var(--bg-main);
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--text-main);
+	transition: var(--transition-fast);
+	border: none;
 	cursor: pointer;
-	transition: all 0.2s;
-	font-size: 18px;
 }
 
-.btn-add-circle:hover {
-	background: #2d5f3f;
+.add-to-cart-btn:hover {
+	background-color: var(--primary-color);
 	color: white;
-}
-
-/* Hide old buttons if any remain */
-.btn-add {
-	display: none;
 }
 
 .btn-show-more {
