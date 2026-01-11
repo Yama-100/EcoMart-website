@@ -252,11 +252,11 @@ function setupEventListeners() {
     });
 
     // Navbar Actions
-    const userIcon = document.querySelector('.fa-user')?.parentElement;
+    const signInBtn = document.querySelector('.btn-signin');
     const cartIcon = document.querySelector('.fa-shopping-cart')?.parentElement;
 
-    if (userIcon) {
-        userIcon.addEventListener('click', (e) => {
+    if (signInBtn) {
+        signInBtn.addEventListener('click', (e) => {
             e.preventDefault();
             toggleModal('login-modal');
         });
@@ -270,7 +270,7 @@ function setupEventListeners() {
     }
 
     // Top Right Search Icon
-    const searchIconTrigger = document.querySelector('.nav-right a .fa-search');
+    const searchIconTrigger = document.querySelector('.nav-right .fa-search');
     if (searchIconTrigger) {
         searchIconTrigger.parentElement.addEventListener('click', (e) => {
             e.preventDefault();
@@ -287,17 +287,16 @@ function setupEventListeners() {
     // Main Navigation Links
     document.querySelectorAll('.nav-left a').forEach(link => {
         link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const text = e.target.innerText;
+            // Remove preventDefault to allow hashtag links to work (like #about-carousel)
+            const text = link.querySelector('span')?.innerText || link.innerText;
             if (text === 'Home') {
+                e.preventDefault();
                 window.scrollTo({ top: 0, behavior: 'smooth' });
-            } else if (text === 'About Us') {
-                document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
-            } else if (text === 'Blog') {
-                document.getElementById('blog').scrollIntoView({ behavior: 'smooth' });
             } else if (text === 'Services') {
+                e.preventDefault();
                 alert('Services page coming soon!');
             }
+            // For About Us and Blog (id links), let default behavior happen
         });
     });
 
@@ -356,12 +355,9 @@ function updateNavbarProfile() {
         const navRight = document.querySelector('.nav-right');
 
         // Hide existing "Sign In" button
-        const userIcon = navRight.querySelector('.fa-user');
-        if (userIcon) {
-            const loginLink = userIcon.closest('a');
-            if (loginLink && loginLink.innerText.includes('Sign In')) {
-                loginLink.style.display = 'none';
-            }
+        const signInBtn = navRight.querySelector('.btn-signin');
+        if (signInBtn) {
+            signInBtn.style.display = 'none';
         }
 
         // Add Profile UI if not exists
