@@ -656,8 +656,10 @@ body {
 
 	.section-header-centered .line {
 		flex: 1;
-		height: 1px;
-		background-color: #e0e0e0;
+		height: 2px;
+		background-color: #d0d0d0;
+		min-width: 50px;
+		/* Ensure lines have minimum width */
 	}
 
 	.section-header-centered .section-title {
