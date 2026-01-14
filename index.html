@@ -12,112 +12,90 @@
 <body>
 
     <!-- ===== HEADER ===== -->
+    <!-- Minimal top navigation with leaf logo, links and a simple cart counter -->
     <header class="main-header" id="home">
         <div class="container header-top">
-            <!-- Left Menu -->
-            <!-- Left Menu -->
-            <nav class="nav-left">
-                <a href="#">
-                    <i class="fas fa-home"></i>
-                    <span>Home</span>
-                </a>
-                <a href="#about-carousel">
-                    <i class="fas fa-users"></i>
-                    <span>About Us</span>
-                </a>
-                <a href="#blog">
-                    <i class="fas fa-book-open"></i>
-                    <span>Blog</span>
-                </a>
-                <a href="#">
-                    <i class="fas fa-th-large"></i>
-                    <span>Services</span>
-                </a>
+            <div class="logo">
+                <i class="fas fa-leaf logo-icon" aria-hidden="true"></i>
+                <span class="visually-hidden">EcoMart</span>
+            </div>
+
+            <nav class="main-nav">
+                <a href="#home">Home</a>
+                <a href="html/products.html">Products</a>
+                <a href="#blog">Blog</a>
+                <a href="html/about.html">About</a>
+                <a href="#faq">FAQ</a>
             </nav>
 
-            <!-- Center Logo -->
-            <div class="logo">
-                <h1>EcoMart</h1>
-            </div>
-
-            <!-- Right Icons -->
-            <div class="nav-right">
-                <a href="#" class="icon-link">
-                    <i class="fas fa-search"></i>
-                    <span>Search</span>
-                </a>
-                <a href="#" class="icon-link" id="cart-link">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span>My Cart</span>
-                    <span class="cart-count">0</span>
-                    <span class="cart-total"
-                        style="display: none; font-size: 11px; color: #1a4d2e; font-weight: bold; margin-top: 2px;">$0.00</span>
-                </a>
-                <a href="#" class="btn-signin"><i class="fas fa-user"></i> Sign In</a>
-            </div>
-        </div>
-
-        <!-- Secondary Navigation -->
-        <div class="header-secondary">
-            <div class="container">
-                <nav class="category-tabs">
-                    <a href="#">All Categories</a>
-                    <a href="#">Organic</a>
-                    <a href="#">Recyclable</a>
-                    <a href="#">Home & Living</a>
-                    <a href="#">Personal Care</a>
-                </nav>
-                <div class="search-wide">
-                    <input type="text" placeholder="Search for eco-friendly products...">
-                    <button><i class="fas fa-search"></i></button>
+            <div class="header-actions">
+                <div class="search-inline">
+                    <input type="text" placeholder="Search products..." aria-label="Search products">
                 </div>
+                <button class="cart-button" type="button">
+                    <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+                    <span>Cart</span>
+                    <span class="cart-count" aria-label="Items in cart">0</span>
+                </button>
             </div>
         </div>
     </header>
 
     <!-- ===== HERO CAROUSEL ===== -->
+    <!-- Carousel with 3 slides, navigation buttons, and auto-play -->
     <section class="hero-carousel">
-        <div class="carousel-container">
-            <div class="carousel-slide active">
-                <img src="https://placehold.co/1400x450/a8d5ba/ffffff?text=Eco+Friendly+Collection" alt="Hero 1">
+        <div class="container hero-carousel-wrapper">
+            <div class="hero-carousel-track">
+                <div class="hero-slide active">
+                    <img src="https://placehold.co/1200x400/a8d5ba/ffffff?text=Eco+Products" alt="Eco Products">
+                </div>
+                <div class="hero-slide">
+                    <img src="https://placehold.co/1200x400/6ba97b/ffffff?text=Sustainable+Living"
+                        alt="Sustainable Living">
+                </div>
+                <div class="hero-slide">
+                    <img src="https://placehold.co/1200x400/2d5f3f/ffffff?text=Green+Future" alt="Green Future">
+                </div>
             </div>
-            <button class="carousel-btn prev" onclick="moveCarousel(-1)">❮</button>
-            <button class="carousel-btn next" onclick="moveCarousel(1)">❯</button>
+            <button class="carousel-btn carousel-prev" aria-label="Previous slide">❮</button>
+            <button class="carousel-btn carousel-next" aria-label="Next slide">❯</button>
             <div class="carousel-dots">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
             </div>
         </div>
     </section>
 
-    <!-- ===== BEST DEALS ===== -->
-    <section class="products-section" id="best-deals">
+    <!-- ===== PRODUCTS ===== -->
+    <section class="products-section" id="products">
         <div class="container">
             <div class="section-header-centered">
                 <div class="line"></div>
-                <h2 class="section-title">Best Deals</h2>
-                <div class="line"></div>
-            </div>
-            <div class="product-grid" id="best-deals-grid">
-                <!-- Best deals content will be rendered here -->
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== JUST FOR YOU ===== -->
-    <section class="products-section bg-light" id="products">
-        <div class="container">
-            <div class="section-header-centered">
-                <div class="line"></div>
-                <h2 class="section-title">Just For You</h2>
+                <h2 class="section-title">Featured Products</h2>
                 <div class="line"></div>
             </div>
 
-            <div class="product-grid" id="just-for-you-grid">
-                <!-- Products will be rendered by JS -->
+            <!-- Static products grid (no JavaScript required) -->
+            <div class="product-grid">
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="https://placehold.co/300x220/e8f5e9/2d5f3f?text=Bamboo+Toothbrush"
+                            alt="Bamboo Toothbrush">
+                        <button class="add-to-cart-btn" type="button" aria-label="Add to cart">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                    <h3 class="product-title">Bamboo Toothbrush</h3>
+                    <div class="product-meta">
+                        <div>
+                            <div class="product-price">$5.99</div>
+                            <div class="product-category">Personal Care</div>
+                        </div>
+                    </div>
+                </article>
+
             </div>
-            <button class="btn-show-more" id="btn-show-more">Show More</button>
         </div>
     </section>
 
@@ -164,33 +142,43 @@
                 <div class="line"></div>
             </div>
 
-            <div class="about-carousel-container" id="about-carousel">
-                <!-- Carousel items will be injected by JS or defined here if static -->
-                <!-- Using static structure for initial layout, JS will handle classes -->
-                <div class="about-card-3d" data-index="0" onclick="setAboutActive(0)">
-                    <div class="profile-img-container"></div>
+            <!-- 5 member boxes in 3D carousel style: middle largest, smaller on sides -->
+            <div class="members-carousel">
+                <div class="member-box member-box-1">
+                    <div class="member-image">
+                        <img src="https://placehold.co/200x200/d1d5db/6b7280?text=Member+1" alt="Elena Rodriguez">
+                    </div>
+                    <h3 class="member-name">Elena Rodriguez</h3>
+                    <p class="member-role">Founder & CEO</p>
                 </div>
-                <div class="about-card-3d" data-index="1" onclick="setAboutActive(1)">
-                    <div class="profile-img-container"></div>
+                <div class="member-box member-box-2">
+                    <div class="member-image">
+                        <img src="https://placehold.co/200x200/d1d5db/6b7280?text=Member+2" alt="Liam Chen">
+                    </div>
+                    <h3 class="member-name">Liam Chen</h3>
+                    <p class="member-role">Head of Sustainability</p>
                 </div>
-                <div class="about-card-3d" data-index="2" onclick="setAboutActive(2)">
-                    <div class="profile-img-container"></div>
+                <div class="member-box member-box-3 member-box-center">
+                    <div class="member-image">
+                        <img src="https://placehold.co/200x200/d1d5db/6b7280?text=Member+3" alt="Sophia Patel">
+                    </div>
+                    <h3 class="member-name">Sophia Patel</h3>
+                    <p class="member-role">Creative Director</p>
                 </div>
-                <div class="about-card-3d" data-index="3" onclick="setAboutActive(3)">
-                    <div class="profile-img-container"></div>
+                <div class="member-box member-box-4">
+                    <div class="member-image">
+                        <img src="https://placehold.co/200x200/d1d5db/6b7280?text=Member+4" alt="Marcus Johnson">
+                    </div>
+                    <h3 class="member-name">Marcus Johnson</h3>
+                    <p class="member-role">Community Manager</p>
                 </div>
-                <div class="about-card-3d" data-index="4" onclick="setAboutActive(4)">
-                    <div class="profile-img-container"></div>
+                <div class="member-box member-box-5">
+                    <div class="member-image">
+                        <img src="https://placehold.co/200x200/d1d5db/6b7280?text=Member+5" alt="Olivia Thorne">
+                    </div>
+                    <h3 class="member-name">Olivia Thorne</h3>
+                    <p class="member-role">Tech Lead</p>
                 </div>
-            </div>
-
-            <div class="about-details">
-                <h3 id="about-name">Name</h3>
-                <div class="separator-line"></div>
-                <p id="about-role">Designation</p>
-                <p id="about-desc" class="about-desc-text">Lorem ipsum dolor sit amet et delectus accommodare his consul
-                    copiosae.</p>
-                <a href="#" class="read-more-link">Read more</a>
             </div>
         </div>
     </section>
@@ -236,7 +224,7 @@
     </section>
 
     <!-- ===== FAQ SECTION ===== -->
-    <section class="faq-section bg-light">
+    <section class="faq-section bg-light" id="faq">
         <div class="container">
             <div class="section-header-centered">
                 <div class="line"></div>
@@ -244,46 +232,46 @@
                 <div class="line"></div>
             </div>
             <div class="faq-list">
-                <div class="faq-item" onclick="toggleFAQ(this)">
-                    <div class="faq-question">
+                <details class="faq-item">
+                    <summary class="faq-question">
                         <span>Do you ship internationally?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </summary>
                     <div class="faq-answer">
                         <p>Yes! We ship to over 50 countries worldwide. Shipping costs and delivery times vary by
                             location.</p>
                     </div>
-                </div>
-                <div class="faq-item" onclick="toggleFAQ(this)">
-                    <div class="faq-question">
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-question">
                         <span>Are all products 100% eco-friendly?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </summary>
                     <div class="faq-answer">
                         <p>Absolutely! Every product is carefully vetted to ensure it meets our strict environmental
                             standards.</p>
                     </div>
-                </div>
-                <div class="faq-item" onclick="toggleFAQ(this)">
-                    <div class="faq-question">
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-question">
                         <span>What is your return policy?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </summary>
                     <div class="faq-answer">
                         <p>We offer a 30-day money-back guarantee on all products. If you're not satisfied, return it
                             for a full refund.</p>
                     </div>
-                </div>
-                <div class="faq-item" onclick="toggleFAQ(this)">
-                    <div class="faq-question">
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-question">
                         <span>How can I track my order?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </summary>
                     <div class="faq-answer">
                         <p>Once your order ships, you'll receive a tracking number via email to monitor your delivery in
                             real-time.</p>
                     </div>
-                </div>
+                </details>
             </div>
         </div>
     </section>
@@ -338,79 +326,7 @@
     </footer>
 
     <!-- ===== JAVASCRIPT ===== -->
-    <script>
-        // Carousel
-        let carouselIndex = 0;
-        const carouselImages = [
-            "https://placehold.co/1400x450/a8d5ba/ffffff?text=Eco+Friendly+Collection",
-            "https://placehold.co/1400x450/c4e3d4/ffffff?text=Summer+Sale+20%+Off",
-            "https://placehold.co/1400x450/d5e8db/ffffff?text=New+Arrivals"
-        ];
-
-        function moveCarousel(n) {
-            carouselIndex += n;
-            if (carouselIndex >= carouselImages.length) carouselIndex = 0;
-            if (carouselIndex < 0) carouselIndex = carouselImages.length - 1;
-
-            document.querySelector('.carousel-slide img').src = carouselImages[carouselIndex];
-
-            document.querySelectorAll('.carousel-dots .dot').forEach((dot, i) => {
-                dot.classList.toggle('active', i === carouselIndex);
-            });
-        }
-
-        // FAQ Toggle
-        function toggleFAQ(element) {
-            element.classList.toggle('active');
-        }
-    </script>
-    <script src="js/script.js"></script>
-
-    <!-- Modals -->
-    <div class="modal-overlay"></div>
-    <div class="modal" id="login-modal">
-        <div class="modal-header">
-            <h3>Welcome Back</h3>
-            <button class="modal-close">&times;</button>
-        </div>
-        <form onsubmit="handleLogin(event)">
-            <div class="form-group">
-                <label>Name</label>
-                <input type="text" id="login-name" placeholder="Enter your name" required>
-            </div>
-            <div class="form-group">
-                <label>Email Address</label>
-                <input type="email" id="login-email" placeholder="Enter your email" required>
-            </div>
-            <div class="form-group">
-                <label>Password</label>
-                <input type="password" id="login-pass" placeholder="Enter your password" required>
-            </div>
-            <button type="submit" class="btn-submit">Sign In</button>
-        </form>
-    </div>
-
-    <!-- Cart Modal -->
-    <div class="modal cart-modal" id="cart-modal">
-        <div class="modal-header">
-            <h3>Shopping Cart</h3>
-            <button class="modal-close">&times;</button>
-        </div>
-        <div class="cart-items-container" id="cart-items-list">
-            <!-- Cart items will be rendered by JS -->
-        </div>
-        <div class="cart-summary">
-            <div class="cart-summary-row">
-                <span>Total Items:</span>
-                <span id="cart-total-items">0</span>
-            </div>
-            <div class="cart-summary-row cart-total-price-row">
-                <span>Total Price:</span>
-                <span id="cart-modal-total">$0.00</span>
-            </div>
-        </div>
-        <button class="btn-checkout">Proceed to Checkout</button>
-    </div>
+    <script src="js/carousel.js"></script>
 
 </body>
 
