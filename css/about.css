@@ -209,57 +209,6 @@ input[type="radio"] {
     color: #374151;
 }
 
-/* ===== CONTRIBUTION SECTION ===== */
-
-.contribution-section {
-    background-color: var(--eco-surface);
-    border-radius: var(--radius-md);
-    border: 1px solid var(--eco-border);
-    padding: 1.5rem;
-    margin-bottom: 2.5rem;
-    min-height: 150px;
-}
-
-.contribution-title {
-    font-size: 1.25rem;
-    color: var(--eco-green);
-    margin-bottom: 1rem;
-    text-align: center;
-}
-
-.contribution-box {
-    position: relative;
-}
-
-.contribution {
-    display: none;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem;
-    background-color: var(--eco-bg);
-    border-radius: 8px;
-}
-
-.contribution i {
-    color: var(--eco-green);
-    font-size: 1.5rem;
-    min-width: 30px;
-}
-
-.contribution p {
-    color: #374151;
-    font-size: 1rem;
-    margin: 0;
-}
-
-/* Show active contribution */
-#p1:checked~.contribution-section .contribution-box .c1,
-#p2:checked~.contribution-section .contribution-box .c2,
-#p3:checked~.contribution-section .contribution-box .c3,
-#p4:checked~.contribution-section .contribution-box .c4,
-#p5:checked~.contribution-section .contribution-box .c5 {
-    display: flex;
-}
 
 /* ===== CONTACT FORM SECTION ===== */
 
