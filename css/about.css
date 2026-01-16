@@ -168,6 +168,8 @@ input[type="radio"] {
 
 /* ===== CERTIFICATES BOX ===== */
 
+/* ===== CERTIFICATES BOX ===== */
+
 .certificates-box {
     flex: 1;
     background-color: var(--eco-surface);
@@ -175,13 +177,39 @@ input[type="radio"] {
     border: 1px solid var(--eco-border);
     padding: 1.5rem;
     max-height: 250px;
+    position: relative;
+    overflow: hidden;
+}
+
+.cert-details {
+    position: absolute;
+    top: 1.5rem;
+    left: 100%;
+    width: calc(100% - 3rem);
+    opacity: 0;
+    transition: all 0.4s ease;
+    max-height: calc(100% - 3rem);
     overflow-y: auto;
+}
+
+/* Show active team member certificates */
+#p1:checked~.details-certificates-section .certificates-box .c1,
+#p2:checked~.details-certificates-section .certificates-box .c2,
+#p3:checked~.details-certificates-section .certificates-box .c3,
+#p4:checked~.details-certificates-section .certificates-box .c4,
+#p5:checked~.details-certificates-section .certificates-box .c5 {
+    left: 1.5rem;
+    opacity: 1;
 }
 
 .certificates-box h3 {
     font-size: 1.25rem;
     color: var(--eco-green);
     margin-bottom: 1rem;
+    position: sticky;
+    top: 0;
+    background-color: var(--eco-surface);
+    z-index: 10;
 }
 
 .cert-item {
