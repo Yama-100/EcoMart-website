@@ -3,58 +3,52 @@
 .blog-page-section {
     padding: 3rem 0;
     min-height: 60vh;
+    background-color: #ffffff;
+    /* Assuming white background from image */
 }
 
 .page-title {
     text-align: center;
-    color: #4a3b89;
-    /* Purple tone as per wireframe/user request? defaulting to theme or purple */
-    margin-bottom: 2.5rem;
-    font-size: 2rem;
+    color: #2d5f3f;
+    /* Matching the green from the image */
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
     font-weight: 700;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    /* Serif font as seen in image */
 }
 
-/* Override existing theme if user requested specific wireframe colors, 
-   but user said "use variables for all colors". 
-   Wireframe shows purple, but previous tokens are green.
-   I will stick to site theme (Green) unless strictly forced to purple. 
-   Actually, the wireframe shows purple text "Our Blog". 
-   I will use a class to allow easy change, but try to blend with site.
-*/
-
 .blog-grid-large {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 2rem;
     justify-content: center;
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
 .blog-card-large {
-    border: 1px solid var(--eco-border);
-    border-radius: var(--radius-md);
-    padding: 1.5rem;
-    background: #fff;
+    flex: 1;
+    min-width: 300px;
+    max-width: 450px;
+    border: none;
+    /* Removed border to match image style */
+    border-radius: 20px;
+    /* More rounded as per image */
+    background: #ffffff;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.blog-card-large:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-soft);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    /* Soft shadow */
+    overflow: hidden;
+    /* For image rounding */
+    padding-bottom: 2rem;
 }
 
 .blog-img-large {
     width: 100%;
     aspect-ratio: 16/9;
     background-color: #f3f4f6;
-    border: 1px solid #ddd;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     overflow: hidden;
 }
 
@@ -62,32 +56,55 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.blog-card-large:hover .blog-img-large img {
+    transform: scale(1.05);
+}
+
+.blog-content {
+    padding: 1.5rem 1.5rem 0;
+    text-align: center;
+    /* Centered content */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
 }
 
 .blog-topic {
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     font-weight: 700;
-    color: #554a91;
-    /* Specific to wireframe purple-ish tone? */
-    text-transform: uppercase;
-    margin: 0.5rem 0;
+    color: #2d5f3f;
+    /* Green color */
+    line-height: 1.4;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    /* Serif font */
 }
 
 .btn-read-more {
-    display: inline-block;
-    padding: 0.6rem 1.2rem;
-    background-color: #8da2c0;
-    /* Wireframe purplish-grey button */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.75rem 2.5rem;
+    background-color: #4CAF50;
+    /* A slightly brighter green or use var */
+    background-color: #55a359;
+    /* Matching the button green better */
     color: white;
     text-decoration: none;
-    border-radius: 6px;
+    border-radius: 999px;
+    /* Pill shape */
     font-weight: 500;
-    align-self: flex-start;
-    transition: background-color 0.2s;
+    font-size: 0.95rem;
+    transition: background-color 0.2s, transform 0.2s;
+    margin-bottom: 1rem;
 }
 
 .btn-read-more:hover {
-    background-color: #6e85a8;
+    background-color: #2d5f3f;
+    transform: translateY(-2px);
 }
 
 /* Article Page Styles */
@@ -95,33 +112,36 @@
 .article-section {
     max-width: 800px;
     margin: 0 auto;
-    padding: 3rem 1rem;
-    text-align: center;
+    padding: 4rem 1rem;
 }
 
 .article-header {
-    margin-bottom: 2rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
 }
 
 .article-title {
-    font-size: 2rem;
-    color: #4a3b89;
+    font-size: 2.5rem;
+    color: #2d5f3f;
     font-weight: 700;
-    text-transform: uppercase;
-    margin-bottom: 0.5rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-bottom: 1rem;
+    line-height: 1.2;
 }
 
 .article-meta {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: var(--eco-muted);
+    font-style: italic;
 }
 
 .article-hero-img {
     width: 100%;
     aspect-ratio: 16/9;
     background-color: #eee;
-    margin-bottom: 2rem;
-    border: 1px solid #ddd;
+    margin-bottom: 2.5rem;
+    border-radius: 12px;
+    overflow: hidden;
 }
 
 .article-hero-img img {
@@ -131,13 +151,10 @@
 }
 
 .article-content {
-    background-color: #f9f9f9;
-    min-height: 200px;
-    /* Placeholder area */
-    text-align: left;
-    padding: 2rem;
-    margin-bottom: 3rem;
-    color: #333;
+    color: #374151;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    margin-bottom: 4rem;
 }
 
 .related-section {
@@ -147,26 +164,43 @@
 }
 
 .related-title {
-    font-size: 1.2rem;
-    color: #4a3b89;
+    font-size: 1.5rem;
+    color: #2d5f3f;
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 0.5rem;
 }
 
 .related-card {
-    border: 1px solid #eee;
+    border: 1px solid #e5e7eb;
     padding: 1rem;
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     align-items: center;
     background: #fff;
-    max-width: 400px;
+    border-radius: 8px;
+    transition: border-color 0.2s;
+}
+
+.related-card:hover {
+    border-color: #2d5f3f;
 }
 
 .related-img {
-    width: 100px;
-    height: 70px;
+    width: 120px;
+    height: 80px;
     background: #eee;
+    border-radius: 6px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.related-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .related-info {
@@ -174,17 +208,19 @@
 }
 
 .related-topic {
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: #4a3b89;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1f2933;
     margin-bottom: 0.5rem;
 }
 
 .btn-read-small {
-    padding: 0.3rem 0.8rem;
-    background: #eee;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+    color: #2d5f3f;
+    font-weight: 600;
     text-decoration: none;
-    color: #333;
-    border-radius: 4px;
+}
+
+.btn-read-small:hover {
+    text-decoration: underline;
 }
