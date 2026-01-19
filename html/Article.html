@@ -1,15 +1,17 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog- EcoMart</title>
+    <title>Article - EcoMart</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/blog.css">
 </head>
 
 <body>
+
     <!-- ===== HEADER ===== -->
     <header class="main-header" id="home">
         <div class="container header-top">
@@ -21,7 +23,7 @@
             <nav class="main-nav">
                 <a href="../index.html">Home</a>
                 <a href="products.html">Products</a>
-                <a href="#blog">Blog</a>
+                <a href="Blog.html">Blog</a>
                 <a href="about.html">About</a>
                 <a href="research.html">Research</a>
             </nav>
@@ -39,39 +41,43 @@
         </div>
     </header>
 
-    <!-- ===== BLOG MAIN ===== -->
-    <section class="blog-page-section">
-        <div class="container">
-            <h1 class="page-title">Our Blog</h1>
+    <!-- ===== ARTICLE CONTENT ===== -->
+    <section class="article-section">
+        <div class="article-header">
+            <h1 class="article-title">TOPIC</h1>
+            <p class="article-meta">By Author Name | Date</p>
+        </div>
 
-            <div class="blog-grid-large">
-                <!-- Blog Post 1 -->
-                <article class="blog-card-large">
-                    <div class="blog-img-large">
-                        <!-- Placeholder image -->
-                        <img src="https://placehold.co/600x400/e2e8f0/64748b?text=Blog+Image+1" alt="Blog Topic 1">
-                    </div>
-                    <div class="blog-content">
-                        <h2 class="blog-topic">TOPIC</h2>
-                        <a href="Article.html" class="btn-read-more">Read More</a>
-                    </div>
-                </article>
+        <div class="article-hero-img">
+            <!-- Placeholder for Hero Image -->
+            <img src="https://placehold.co/800x450/e2e8f0/64748b?text=Article+Hero+Image" alt="Article Hero">
+        </div>
 
-                <!-- Blog Post 2 -->
-                <article class="blog-card-large">
-                    <div class="blog-img-large">
-                        <!-- Placeholder image -->
-                        <img src="https://placehold.co/600x400/e2e8f0/64748b?text=Blog+Image+2" alt="Blog Topic 2">
-                    </div>
-                    <div class="blog-content">
-                        <h2 class="blog-topic">TOPIC</h2>
-                        <a href="Article.html" class="btn-read-more">Read More</a>
-                    </div>
-                </article>
-            </div>
+        <div class="article-content">
+            <!-- Placeholder Content -->
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat.</p>
+            <br>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                laborum.</p>
         </div>
     </section>
 
+    <!-- ===== YOU MIGHT ALSO LIKE ===== -->
+    <section class="related-section">
+        <h3 class="related-title">You Might Also Like</h3>
+        <div class="related-card">
+            <div class="related-img">
+                <img src="https://placehold.co/150x100/e2e8f0/64748b?text=Thumb" alt="Related">
+            </div>
+            <div class="related-info">
+                <h4 class="related-topic">TOPIC</h4>
+                <a href="#" class="btn-read-small">Read More</a>
+            </div>
+        </div>
+    </section>
 
     <!-- ===== FOOTER ===== -->
     <footer class="main-footer">
@@ -90,7 +96,7 @@
                     <h4>Information</h4>
                     <a href="#">About Us</a>
                     <a href="#">Contact</a>
-                    <a href="#">FAQ</a>
+                    <a href="Blog.html">Blog</a>
                     <a href="#">Shipping</a>
                 </div>
                 <div class="footer-col">
@@ -102,8 +108,8 @@
                 </div>
                 <div class="footer-col">
                     <h4>Contact Us</h4>
-                    <p>📧 info@ecomart.com</p>
-                    <p>📱 +1 (555) 123-4567</p>
+                    <p>📧 eco@ecomart.com</p>
+                    <p>📱 +977 9761856566</p>
                     <div class="social-icons">
                         <a href="#"><i class="fab fa-facebook"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -121,6 +127,7 @@
             </div>
         </div>
     </footer>
+
 </body>
 
 </html>
