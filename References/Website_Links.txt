@@ -1,0 +1,7 @@
+Amazon Filters: https://www.amazon.com/s?k=smartphones&_encoding=UTF8&content-id=amzn1.sym.69a935ef-cee6-41d5-aefa-c36bfc7821bc&pd_rd_r=c7513508-d426-4d64-acae-4507023eef48&pd_rd_w=ZEOGa&pd_rd_wg=zw6Zq&pf_rd_p=69a935ef-cee6-41d5-aefa-c36bfc7821bc&pf_rd_r=NK86A82M74MY3HAPR54W&ref=pd_hp_d_btf_unk
+Flipkart Category :https://www.flipkart.com/
+Etsy Product Card: https://www.etsy.com/search?q=wedding+gifts&anchor_listing_id=825758412&ref=hp_bubbles_startofyear26&mosv=sese&moci=1445811643924&mosi=1446535944831&is_merch_library=true
+
+Ecomart Filters: localhost/html/Products.html
+Ecomart Category :localhost/html/Products.html
+Ecomart Product Card: localhost/html/Products.html

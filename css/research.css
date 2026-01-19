@@ -1,0 +1,161 @@
+/* Research Page Styles */
+
+main.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+main h1 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #2d5a3d;
+    font-size: 1.8em;
+}
+
+main p {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 0.95em;
+}
+
+section {
+    margin-bottom: 25px;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+}
+
+section h2 {
+    color: #2d5a3d;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+    text-align: center;
+}
+
+.comparison {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.site-column {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.site-column h3 {
+    color: #4a7c59;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+}
+
+.design-ss {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin: 5px auto;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.design-ss:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    border-color: #2d5a3d;
+}
+
+.image-row {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.site-column p {
+    font-size: 0.9em;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.site-column ul {
+    margin: 8px 0 0 15px;
+    text-align: left;
+}
+
+.site-column li {
+    margin-bottom: 3px;
+    font-size: 0.85em;
+}
+
+section h3 {
+    color: #4a7c59;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+section ul {
+    margin: 0 0 0 15px;
+    text-align: left;
+}
+
+section li {
+    margin-bottom: 3px;
+    font-size: 0.85em;
+}
+
+section a {
+    color: #2d5a3d;
+    text-decoration: underline;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    font-size: 0.9em;
+}
+
+.comparison-table th,
+.comparison-table td {
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    text-align: left;
+}
+
+.comparison-table th {
+    background-color: #f2f2f2;
+    color: #2d5a3d;
+    font-weight: bold;
+}
+
+
+
+.section-title {
+    color: #2d5a3d;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+
+
+
+
+section {
+    animation: fadeIn 0.6s ease-out;
+}
